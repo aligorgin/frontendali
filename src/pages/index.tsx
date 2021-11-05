@@ -9,7 +9,7 @@ const Home: NextPage = () => {
             <Head>
                 <title>FrontendAli</title>
                 <meta name="description" content="hello,i'm ali a front end dev."/>
-                <link rel="icon" href=""/>
+                <link rel="icon" href="/favicon.ico"/>
             </Head>
             <App/>
         </div>

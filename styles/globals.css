@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .flex-100 {
+        flex: 0 0 100%;
+    }
+
+    .min-w-33 {
+        min-width: 33rem;
+    }
+
+}
+
 html {
     @apply bg-gray-100;
+}
+
+::selection {
+    background-color: #64b0ee;
+    color: #fefefe;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scrollbar-x-hidden::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
 }
