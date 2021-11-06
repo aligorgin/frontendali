@@ -7,8 +7,8 @@
         flex: 0 0 100%;
     }
 
-    .min-w-33 {
-        min-width: 33rem;
+    .gradient-text {
+        @apply bg-gradient-to-r inline-block bg-clip-text text-transparent;
     }
 
 }
@@ -26,7 +26,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.scrollbar-x-hidden::-webkit-scrollbar{
-    width: 0;
-    background: transparent;
-}
+/*.scrollbar-x-hidden::-webkit-scrollbar{*/
+/*    width: 0;*/
+/*    background: transparent;*/
+/*}*/
