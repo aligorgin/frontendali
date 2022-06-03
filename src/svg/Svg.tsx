@@ -1,8 +1,11 @@
+import clsx from "clsx";
+
 interface Props {
     name: string;
+    padding?: boolean;
 }
 
-export default function Svg({name}: Props) {
+export default function Svg({name, padding}: Props) {
     return (
         <div>
             {
@@ -37,11 +40,20 @@ export default function Svg({name}: Props) {
                 </svg>
             }
             {
-                name === 'download'&&
+                name === 'download' &&
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round"
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+            }
+            {
+                name === 'chevron-right' &&
+                <svg xmlns="http://www.w3.org/2000/svg" className={clsx('h-5 w-5', padding && 'mt-1')}
+                     viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"/>
                 </svg>
             }
         </div>

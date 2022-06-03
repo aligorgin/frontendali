@@ -8,13 +8,13 @@
     }
 
     .gradient-text {
-        @apply bg-gradient-to-r inline-block bg-clip-text text-transparent;
+        @apply bg-gradient-to-r inline-block bg-clip-text text-transparent sm:text-[15px] text-[20px];
     }
 
 }
 
 html {
-    @apply bg-gray-100;
+    @apply text-slate-900 bg-slate-200 antialiased;
 }
 
 ::selection {

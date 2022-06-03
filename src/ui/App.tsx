@@ -5,7 +5,7 @@ import ITechs from "./containers/ITechs";
 
 export default function App() {
     return (
-        <div className='max-w-[38.938rem] mx-auto'>
+        <div className='max-w-[38.938rem] mx-4 sm:mx-auto'>
             <Nav/>
             <Header/>
             <ITechs/>
