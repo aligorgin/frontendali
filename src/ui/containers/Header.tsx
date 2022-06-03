@@ -16,7 +16,7 @@ export default function Header() {
                 <div>
                     <h1 className='text-5xl font-bold text-slate-900'>{text}</h1>
                     {show &&
-                        <div className='mt-2 text-[20px] text-slate-900 opacity-75'>
+                        <div className='mt-2 text-[20px] text-slate-900 opacity-80'>
                             <TextLoop springConfig={{stiffness: 350, damping: 8}}>
                                 <span>front-end</span>
                                 <span>committed</span>
@@ -33,9 +33,9 @@ export default function Header() {
                 </div>
             </div>
             <div className='mt-12'>
-                <button className='flex shadow-2xl text-white justify-center items-center w-[211px] h-12 rounded-md bg-gradient-to-t from-[#dd2476] to-[#ff512f]'>
+                <button className='flex shadow-med active:scale-95 active:shadow hover:shadow-med-hover hover:brightness-110 transition-all text-white justify-center items-center w-[211px] h-12 rounded-md bg-gradient-to-t from-[#dd2476] to-[#ff512f]'>
                     <Svg name={'download'}/>
-                    <span className='pl-1 text-lg'>CV</span>
+                    <span className='ml-1 text-lg'>CV</span>
                 </button>
             </div>
         </header>
