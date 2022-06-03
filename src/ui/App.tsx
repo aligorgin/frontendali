@@ -1,12 +1,14 @@
 import Nav from "./containers/Nav";
 import Header from "./containers/Header";
 import Projects from "./containers/Projects";
+import ITechs from "./containers/ITechs";
 
-export default function App(){
-    return(
-        <div className='max-w-2xl mx-auto py-8'>
+export default function App() {
+    return (
+        <div className='max-w-[38.938rem] mx-auto'>
             <Nav/>
             <Header/>
+            <ITechs/>
             <Projects/>
         </div>
     )
