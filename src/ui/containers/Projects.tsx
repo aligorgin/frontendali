@@ -8,7 +8,7 @@ export default function Projects() {
             <h2 className='text-4xl font-semibold  mt-12'>
                 Projects
             </h2>
-            <div className='mt-4 max-w-full relative'>
+            <div className='mt-4 max-w-full relative '>
                 <ScrollContainer vertical={false} horizontal={true} className={'flex w-full space-x-3 relative'}>
                     <Cards desc={'simple app that shows weather'} iconSrc={'https://github.com/aligorgin/weatherS'} image={'weather'} />
                     <Cards desc={'simple app that shows weather'} iconSrc={'https://github.com/aligorgin/weatherS'} image={'weather'} />
