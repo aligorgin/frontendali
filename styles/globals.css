@@ -14,7 +14,8 @@
 }
 
 html {
-    @apply text-slate-900 bg-slate-200 antialiased;
+    @apply text-slate-900 bg-slate-200 antialiased text-[18px] sm:text-[16px];
+;
 }
 
 ::selection {
