@@ -33,7 +33,7 @@ export default function Header() {
                 </div>
             </div>
             <div className='mt-12 flex justify-center sm:justify-start'>
-                <button className='flex shadow-med active:scale-95 active:shadow hover:shadow-med-hover hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-8/12 h-[48px]  sm:w-[200px] sm:h-[41px] rounded-md bg-gradient-to-t from-dark-red to-light-orange'>
+                <button className='flex shadow-med active:scale-95 active:shadow hover:shadow-med-hover hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-7/12 h-[48px]  sm:w-[200px] sm:h-[41px] rounded-md bg-gradient-to-t from-dark-red to-light-orange'>
                     <Svg name={'download'}/>
                     <span className='ml-1 text-lg'>CV</span>
                 </button>
