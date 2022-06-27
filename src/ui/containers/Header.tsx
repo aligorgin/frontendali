@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import Words from "../contents/Words";
 import Svg from "../../svg/Svg";
 
+
 export default function Header() {
     const [show, setShow] = useState(true);
     const text = useDelayedText('Hello, i\'m Ali', 100);
