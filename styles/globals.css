@@ -3,18 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
-    .flex-100 {
-        flex: 0 0 100%;
-    }
-
-    .gradient-text {
-        @apply bg-gradient-to-r inline-block bg-clip-text text-transparent sm:text-[15px] text-[20px];
-    }
-
+    /*write and use tailwind classes here*/
 }
 
 html {
-    @apply text-zinc-900 bg-zinc-200 dark:text-zinc-200 dark:bg-zinc-900 antialiased text-[18px] sm:text-[16px];
+    @apply dark:text-zinc-200 dark:bg-zinc-900 text-zinc-900 bg-zinc-200 antialiased text-[18px] sm:text-[16px];
     scroll-behavior: smooth;
 }
 

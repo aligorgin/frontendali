@@ -1,11 +1,17 @@
 import Svg from "../../svg/Svg";
 import {useTheme} from "next-themes";
+import {useEffect, useState} from "react";
 
 export default function Nav() {
-
+    const [mounted, setMounted] = useState<boolean>(false);
     const {systemTheme, theme, setTheme} = useTheme();
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const renderThemeToggle = () => {
+        if (!mounted) return null;
         const currentTheme = theme === 'system' ? systemTheme : theme;
         if (currentTheme === 'dark') {
             return (
@@ -13,15 +19,17 @@ export default function Nav() {
                     <Svg name={'moon'}/>
                 </button>
             )
+        } else {
+            return (
+                <button onClick={() => setTheme('dark')}>
+                    <Svg name={'sun'}/>
+                </button>
+            )
         }
-        return (
-            <button onClick={() => setTheme('dark')}>
-                <Svg name={'sun'}/>
-            </button>
-        )
+
     }
 
-    console.log()
+    console.log('theme is', theme)
 
     return (
         <div

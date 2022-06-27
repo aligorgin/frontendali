@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
+    "@mantine/core": "^4.2.11",
+    "@mantine/hooks": "^4.2.11",
+    "@mantine/next": "^4.2.11",
     "@tailwindcss/typography": "^0.5.2",
     "clsx": "^1.1.1",
     "embla-carousel-react": "^6.2.0",
