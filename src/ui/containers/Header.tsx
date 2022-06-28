@@ -4,7 +4,6 @@ import Words from "../contents/Words";
 import Image from "next/image";
 import TextLoop from "react-text-loop";
 import useDelayedText from "../../utils/useDelayedText";
-import Svg from "../../svg/Svg";
 import clsx from "clsx";
 import {useTheme} from "next-themes";
 import {ChatAlt2Icon, DownloadIcon} from "@heroicons/react/outline";
@@ -38,14 +37,12 @@ export default function Header() {
                            objectFit={'cover'}/>
                 </div>
             </div>
-            <div className='mt-12 flex justify-center sm:justify-start'>
-                <button
-                    className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue', 'bg-gradient-to-t from-dark-red to-light-orange')}>
+            <div className='mt-12 flex flex-col sm:flex-row justify-center sm:justify-start items-center'>
+                <button className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue', 'bg-gradient-to-t from-dark-red to-light-orange')}>
                     <DownloadIcon className='w-6 h-6'/>
                     <span className='ml-1 text-lg'>CV</span>
                 </button>
-                <button
-                    className={clsx(buttonCssClasses, 'ml-4 border-2', 'dark:border-light-blue', 'border-light-orange')}>
+                <button className={clsx(buttonCssClasses, 'ml-0 mt-4 sm:mt-0 sm:ml-4 border-2', 'dark:border-light-blue', 'border-light-orange')}>
                     <span className='ml-1 text-lg flex'>
                         <ChatAlt2Icon className='w-6 h-6 text-light-orange dark:text-light-blue'/>
                         <span></span>
