@@ -13,7 +13,7 @@ import {ChatAlt2Icon, DownloadIcon} from "@heroicons/react/outline";
 export default function Header() {
     const [show, setShow] = useState(true);
     const text = useDelayedText('Hello, i\'m Ali', 100);
-    const buttonCssClasses = 'flex shadow-med active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-1 sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-7/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
+    const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-1 sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-7/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
     const {theme} = useTheme();
 
     return (
@@ -40,12 +40,12 @@ export default function Header() {
             </div>
             <div className='mt-12 flex justify-center sm:justify-start'>
                 <button
-                    className={clsx(buttonCssClasses, theme === 'dark' ? 'bg-gradient-to-t from-dark-purple to-light-blue' : 'bg-gradient-to-t from-dark-red to-light-orange')}>
+                    className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue', 'bg-gradient-to-t from-dark-red to-light-orange')}>
                     <DownloadIcon className='w-6 h-6'/>
                     <span className='ml-1 text-lg'>CV</span>
                 </button>
                 <button
-                    className={clsx(buttonCssClasses, 'ml-4 border-2', theme === 'dark' ? 'border-light-blue' : 'border-light-orange')}>
+                    className={clsx(buttonCssClasses, 'ml-4 border-2', 'dark:border-light-blue', 'border-light-orange')}>
                     <span className='ml-1 text-lg flex'>
                         <ChatAlt2Icon className='w-6 h-6 text-light-orange dark:text-light-blue'/>
                         <span></span>

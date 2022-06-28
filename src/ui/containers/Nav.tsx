@@ -6,6 +6,7 @@ export default function Nav() {
     const [mounted, setMounted] = useState<boolean>(false);
     const {systemTheme, theme, setTheme} = useTheme();
 
+
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -16,13 +17,13 @@ export default function Nav() {
         if (currentTheme === 'dark') {
             return (
                 <button onClick={() => setTheme('light')}>
-                    <MoonIcon className='h-6 w-6 mt-2'/>
+                    <MoonIcon className='w-8 h-8 sm:h-6 sm:w-6 mt-2'/>
                 </button>
             )
         }
         return (
             <button onClick={() => setTheme('dark')}>
-                <SunIcon className='h-6 w-6 mt-2'/>
+                <SunIcon className='w-8 h-8 sm:h-6 sm:w-6 mt-2'/>
             </button>
         )
     }
@@ -33,7 +34,7 @@ export default function Nav() {
             <div className='flex justify-between items-center my-2 mx-4 sm:mx-0 sm:mt-2'>
                 {/*left nav*/}
                 <div>
-                    <ChatAlt2Icon className='w-6 h-6'/>
+                    <ChatAlt2Icon className='w-8 h-8 sm:w-6 sm:h-6'/>
                 </div>
 
 

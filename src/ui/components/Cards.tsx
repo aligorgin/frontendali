@@ -1,8 +1,6 @@
 import {ReactNode} from "react";
-import Image from "next/image";
-import Weather from '../../../public/weather.png';
-import Svg from "../../svg/Svg";
 import ImageCards from "./ImageCards";
+import {AiFillGithub} from 'react-icons/ai'
 
 interface Props {
     desc: string;
@@ -25,7 +23,7 @@ export default function Cards({children, desc, iconSrc, image}: Props) {
                     <div
                         className='cursor-pointer transition hover:-translate-y-1 active:-translate-y-0.5 hover:brightness-125 '>
                         <a href={iconSrc} target={'_blank'} rel={'noreferrer'}>
-                            <Svg name={'github'}/>
+                            <AiFillGithub className='w-7 h-7 text-zinc-900 dark:text-zinc-200'/>
                         </a>
                     </div>
                 </div>
