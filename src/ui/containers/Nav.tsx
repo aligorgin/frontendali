@@ -4,7 +4,7 @@ import {ChatAlt2Icon, MoonIcon, SunIcon, XIcon} from "@heroicons/react/outline";
 import clsx from "clsx";
 import {motion} from "framer-motion";
 import {BsLinkedin} from 'react-icons/bs';
-import {AiFillGithub,AiOutlineInstagram} from 'react-icons/ai';
+import {AiFillGithub, AiOutlineInstagram} from 'react-icons/ai';
 
 export default function Nav() {
     const [mounted, setMounted] = useState<boolean>(false);
@@ -41,7 +41,8 @@ export default function Nav() {
             className='sm:mt-4 fixed sm:relative top-0 right-0 left-0 transition-all duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none z-50 w-full'>
             <div className='flex justify-between items-center my-2 mx-4 sm:mx-0 sm:mt-2'>
                 {/*left nav*/}
-                <button className={clsx(navIconClasses, 'bg-zinc-300 dark:bg-zinc-600 overflow-hidden')} onClick={() => setClicked(!clicked)}>
+                <button className={clsx(navIconClasses, 'bg-zinc-300 dark:bg-zinc-600 overflow-hidden')}
+                        onClick={() => setClicked(!clicked)}>
                     {/*close and un close*/}
                     <motion.div
                         animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}
@@ -56,27 +57,30 @@ export default function Nav() {
                         <XIcon className='w-5 h-5 -translate-x-1/2'/>
                     </motion.div>
                 </button>
-                {/*/!*links*!/*/}
-                {/*<div>*/}
-                {/*    <motion.div*/}
-                {/*        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}*/}
-                {/*        transition={{ease: 'easeOut', duration: .2}}*/}
-                {/*    >*/}
-                {/*        <BsLinkedin className='w-5 h-5 '/>*/}
-                {/*    </motion.div>*/}
-                {/*    <motion.div*/}
-                {/*        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}*/}
-                {/*        transition={{ease: 'easeOut', duration: .2}}*/}
-                {/*    >*/}
-                {/*        <AiFillGithub className='w-5 h-5 '/>*/}
-                {/*    </motion.div>*/}
-                {/*    <motion.div*/}
-                {/*        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}*/}
-                {/*        transition={{ease: 'easeOut', duration: .2}}*/}
-                {/*    >*/}
-                {/*        <AiOutlineInstagram className='w-5 h-5 '/>*/}
-                {/*    </motion.div>*/}
-                {/*</div>*/}
+                {/*links*/}
+                <div className='flex-1 flex space-x-2'>
+                    <motion.div
+                        animate={clicked ? {x: 0, opacity: 0} : {x: 10, opacity: 1}}
+                        transition={{ease: 'easeInOut', duration: .1}}
+                    ><a target={'_blank'} href="https://www.github.com/aligorgin">
+                        <AiFillGithub className='w-6 h-6 '/>
+                    </a>
+                    </motion.div>
+                    <motion.div
+                        animate={clicked ? {x: 0, opacity: 0} : {x: 10, opacity: 1}}
+                        transition={{ease: 'easeInOut', duration: .2}}
+                    ><a target={'_blank'} href="https://www.instagram.com/frontendalii/">
+                        <AiOutlineInstagram className='w-6 h-6 '/>
+                    </a>
+                    </motion.div>
+                    <motion.div
+                        animate={clicked ? {x: 0, opacity: 0} : {x: 15, opacity: 1}}
+                        transition={{ease: 'easeInOut', duration: .25}}
+                    ><a target={'_blank'} href="https://www.linkedin.com/in/ali-gorgin-562b71199">
+                        <BsLinkedin className='w-6 h-6 '/>
+                    </a>
+                    </motion.div>
+                </div>
 
 
                 {/*right nav*/}
