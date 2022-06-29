@@ -12,7 +12,7 @@ import {ChatAlt2Icon, DownloadIcon} from "@heroicons/react/outline";
 export default function Header() {
     const [show, setShow] = useState(true);
     const text = useDelayedText('Hello, i\'m Ali', 100);
-    const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-1 sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-7/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
+    const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-9/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
     const {theme} = useTheme();
 
     return (

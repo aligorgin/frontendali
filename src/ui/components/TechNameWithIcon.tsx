@@ -1,5 +1,3 @@
-import Svg from "../../svg/Svg";
-
 interface Props {
     TechName: string
 }

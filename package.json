@@ -14,7 +14,7 @@
     "@mantine/next": "^4.2.11",
     "@tailwindcss/typography": "^0.5.2",
     "clsx": "^1.1.1",
-    "framer-motion": "^6.3.3",
+    "framer-motion": "^6.3.16",
     "next": "12.1.6",
     "next-themes": "^0.2.0",
     "react": "18.1.0",

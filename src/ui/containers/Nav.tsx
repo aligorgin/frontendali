@@ -1,12 +1,17 @@
 import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
-import {ChatAlt2Icon, MoonIcon, SunIcon} from "@heroicons/react/outline";
+import {ChatAlt2Icon, MoonIcon, SunIcon, XIcon} from "@heroicons/react/outline";
+import clsx from "clsx";
+import {motion} from "framer-motion";
+import {BsLinkedin} from 'react-icons/bs';
+import {AiFillGithub,AiOutlineInstagram} from 'react-icons/ai';
 
 export default function Nav() {
     const [mounted, setMounted] = useState<boolean>(false);
     const {systemTheme, theme, setTheme} = useTheme();
+    const [clicked, setClicked] = useState<boolean>(false)
 
-
+    const navIconClasses = 'rounded-lg w-8 h-8 flex justify-center items-center hover:ring-2 hover:ring-zinc-900 dark:hover:ring-zinc-200 transition-shadow '
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -16,26 +21,62 @@ export default function Nav() {
         const currentTheme = theme === 'system' ? systemTheme : theme;
         if (currentTheme === 'dark') {
             return (
-                <button onClick={() => setTheme('light')}>
-                    <MoonIcon className='w-8 h-8 sm:h-6 sm:w-6 mt-2'/>
+                <button className={clsx('bg-zinc-600', navIconClasses)}
+                        onClick={() => setTheme('light')}>
+                    <SunIcon className='w-5 h-5 '/>
                 </button>
             )
         }
         return (
-            <button onClick={() => setTheme('dark')}>
-                <SunIcon className='w-8 h-8 sm:h-6 sm:w-6 mt-2'/>
+            <button className={clsx('bg-zinc-300', navIconClasses)}
+                    onClick={() => setTheme('dark')}>
+                <MoonIcon className='w-5 h-5 '/>
             </button>
         )
     }
+    console.log(clicked)
 
     return (
         <div
-            className='fixed sm:relative top-0 right-0 left-0 transition-all duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none z-50 w-full'>
+            className='sm:mt-4 fixed sm:relative top-0 right-0 left-0 transition-all duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none z-50 w-full'>
             <div className='flex justify-between items-center my-2 mx-4 sm:mx-0 sm:mt-2'>
                 {/*left nav*/}
-                <div>
-                    <ChatAlt2Icon className='w-8 h-8 sm:w-6 sm:h-6'/>
-                </div>
+                <button className={clsx(navIconClasses, 'bg-zinc-300 dark:bg-zinc-600 overflow-hidden')} onClick={() => setClicked(!clicked)}>
+                    {/*close and un close*/}
+                    <motion.div
+                        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}
+                        transition={{ease: 'easeOut', duration: .2}}
+                    >
+                        <ChatAlt2Icon className='w-5 h-5 translate-x-1/2'/>
+                    </motion.div>
+                    <motion.div
+                        animate={clicked ? {x: -13, opacity: 0} : {x: 0, opacity: 1}}
+                        transition={{ease: 'easeOut', duration: .2}}
+                    >
+                        <XIcon className='w-5 h-5 -translate-x-1/2'/>
+                    </motion.div>
+                </button>
+                {/*/!*links*!/*/}
+                {/*<div>*/}
+                {/*    <motion.div*/}
+                {/*        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}*/}
+                {/*        transition={{ease: 'easeOut', duration: .2}}*/}
+                {/*    >*/}
+                {/*        <BsLinkedin className='w-5 h-5 '/>*/}
+                {/*    </motion.div>*/}
+                {/*    <motion.div*/}
+                {/*        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}*/}
+                {/*        transition={{ease: 'easeOut', duration: .2}}*/}
+                {/*    >*/}
+                {/*        <AiFillGithub className='w-5 h-5 '/>*/}
+                {/*    </motion.div>*/}
+                {/*    <motion.div*/}
+                {/*        animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}*/}
+                {/*        transition={{ease: 'easeOut', duration: .2}}*/}
+                {/*    >*/}
+                {/*        <AiOutlineInstagram className='w-5 h-5 '/>*/}
+                {/*    </motion.div>*/}
+                {/*</div>*/}
 
 
                 {/*right nav*/}
