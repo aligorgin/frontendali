@@ -2,16 +2,17 @@ import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
 import {ChatAlt2Icon, MoonIcon, SunIcon, XIcon} from "@heroicons/react/outline";
 import clsx from "clsx";
-import {motion} from "framer-motion";
+import {motion, AnimatePresence} from "framer-motion";
 import {BsLinkedin} from 'react-icons/bs';
 import {AiFillGithub, AiOutlineInstagram} from 'react-icons/ai';
 
 export default function Nav() {
     const [mounted, setMounted] = useState<boolean>(false);
     const {systemTheme, theme, setTheme} = useTheme();
-    const [clicked, setClicked] = useState<boolean>(false)
+    const [clicked, setClicked] = useState<boolean | null>(true)
 
     const navIconClasses = 'rounded-lg w-8 h-8 flex justify-center items-center hover:ring-2 hover:ring-zinc-900 dark:hover:ring-zinc-200 transition-shadow '
+    const linksIconsHover = 'transition-all hover:translate-y-[2px] active:translate-y-0'
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -21,7 +22,7 @@ export default function Nav() {
         const currentTheme = theme === 'system' ? systemTheme : theme;
         if (currentTheme === 'dark') {
             return (
-                <button className={clsx('bg-zinc-600', navIconClasses)}
+                <button className={clsx('bg-zinc-600 ', navIconClasses)}
                         onClick={() => setTheme('light')}>
                     <SunIcon className='w-5 h-5 '/>
                 </button>
@@ -59,27 +60,45 @@ export default function Nav() {
                 </button>
                 {/*links*/}
                 <div className='flex-1 flex space-x-2'>
-                    <motion.div
-                        animate={clicked ? {x: 0, opacity: 0} : {x: 10, opacity: 1}}
-                        transition={{ease: 'easeInOut', duration: .1}}
-                    ><a target={'_blank'} href="https://www.github.com/aligorgin">
-                        <AiFillGithub className='w-6 h-6 '/>
-                    </a>
-                    </motion.div>
-                    <motion.div
-                        animate={clicked ? {x: 0, opacity: 0} : {x: 10, opacity: 1}}
-                        transition={{ease: 'easeInOut', duration: .2}}
-                    ><a target={'_blank'} href="https://www.instagram.com/frontendalii/">
-                        <AiOutlineInstagram className='w-6 h-6 '/>
-                    </a>
-                    </motion.div>
-                    <motion.div
-                        animate={clicked ? {x: 0, opacity: 0} : {x: 15, opacity: 1}}
-                        transition={{ease: 'easeInOut', duration: .25}}
-                    ><a target={'_blank'} href="https://www.linkedin.com/in/ali-gorgin-562b71199">
-                        <BsLinkedin className='w-6 h-6 '/>
-                    </a>
-                    </motion.div>
+                    <AnimatePresence>
+                        {!clicked &&
+                            <>
+                                <motion.div
+                                    initial={{x: 0, opacity: 0}}
+                                    animate={{x: 15, opacity: 1}}
+                                    exit={{x: 0, opacity: 0}}
+                                    transition={{ease: 'easeOut', duration: .1}}
+                                ><a className={clsx('transition-all hover:translate-y-[2px] active:translate-y-0')}
+                                    target={'_blank'} href="https://www.github.com/aligorgin" rel="noreferrer">
+                                    <AiFillGithub className='w-6 h-6 '/>
+                                </a>
+                                </motion.div>
+                                <motion.div
+                                    initial={{x: 0, opacity: 0}}
+                                    animate={{x: 15, opacity: 1}}
+                                    exit={{x: 0, opacity: 0}}
+                                    transition={{ease: 'easeOut', duration: .2}}
+                                ><a className={clsx(linksIconsHover)} target={'_blank'}
+                                    href="https://www.instagram.com/frontendalii/" rel="noreferrer">
+                                    <AiOutlineInstagram className='w-6 h-6 '/>
+                                </a>
+                                </motion.div>
+                                <motion.div
+                                    initial={{x: 0, opacity: 0}}
+                                    animate={{x: 15, opacity: 1}}
+                                    exit={{x: 0, opacity: 0}}
+                                    transition={{ease: 'easeOut', duration: .3}}
+                                ><a className={clsx(linksIconsHover)} target={'_blank'}
+                                    href="https://www.linkedin.com/in/ali-gorgin-562b71199"
+                                    rel="noreferrer">
+                                    <BsLinkedin className='w-6 h-6 '/>
+                                </a>
+                                </motion.div>
+                            </>
+                        }
+                    </AnimatePresence>
+
+
                 </div>
 
 
