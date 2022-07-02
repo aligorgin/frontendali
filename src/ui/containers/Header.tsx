@@ -1,5 +1,4 @@
-import Avatar from '../../../public/avatar.jpg'
-import {useEffect, useState} from "react";
+import Avatar from '../../../public/avatar.jpg';
 import Words from "../contents/Words";
 import Image from "next/image";
 import TextLoop from "react-text-loop";
@@ -10,8 +9,7 @@ import {ChatAlt2Icon, DownloadIcon} from "@heroicons/react/outline";
 
 
 export default function Header() {
-    const [show, setShow] = useState(true);
-    const text = useDelayedText('Hello, i\'m Ali', 100);
+    const text = useDelayedText('ello, i\'m Ali', 100);
     const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-9/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
     const {theme} = useTheme();
 
@@ -19,18 +17,16 @@ export default function Header() {
         <header className='mt-20 sm:mt-12'>
             <div className='flex flex-col-reverse justify-center items-center sm:flex-row '>
                 <div className='text-center sm:text-left'>
-                    <h1 className='text-5xl font-bold'>{text}</h1>
-                    {show &&
+                    <h1 className='text-5xl font-bold'>H{text}</h1>
                         <div className='mt-2 text-[20px] opacity-80'>
-                            <TextLoop springConfig={{stiffness: 350, damping: 8}}>
-                                <span>front-end</span>
-                                <span>committed</span>
-                                <span>passionated</span>
-                            </TextLoop>
+                            {/*<TextLoop>*/}
+                            {/*    <span>front-end</span>*/}
+                            {/*    <span>committed</span>*/}
+                            {/*    <span>passionated</span>*/}
+                            {/*</TextLoop>*/}
                             {' '}developer
                         </div>
-                    }
-                    <div className='mt-4 font-normal leading-7 sm:leading-6'>{Words.about}</div>
+                    <div className='mt-2 font-normal leading-7 sm:leading-6'>{Words.about}</div>
                 </div>
                 <div className='w-[213px] h-[213px] sm:w-[146px] sm:h-[146px] flex-shrink-0 ml-0 sm:ml-16 mb-4 sm:mb-0'>
                     <Image className='rounded-full filter brightness-110' src={Avatar} alt='a photo of ali'
