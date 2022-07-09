@@ -7,7 +7,7 @@
 }
 
 body {
-    @apply dark:text-zinc-200 dark:bg-zinc-900 bg-zinc-200 text-zinc-900  antialiased text-[18px] sm:text-[16px] transition-all duration-200;
+    @apply dark:text-zinc-200 dark:bg-zinc-900 bg-zinc-200 text-zinc-900 antialiased text-[18px] sm:text-[16px] transition-all duration-200;
     scroll-behavior: smooth;
 }
 

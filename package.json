@@ -22,7 +22,7 @@
     "react-icons": "^4.4.0",
     "react-indiana-drag-scroll": "^2.1.0",
     "react-spring": "^9.3.0",
-    "react-text-loop": "^2.3.0"
+    "react-text-loop-next": "^0.0.3"
   },
   "devDependencies": {
     "@types/node": "17.0.35",

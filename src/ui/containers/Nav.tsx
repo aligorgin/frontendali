@@ -1,18 +1,20 @@
 import {useTheme} from "next-themes";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {ChatAlt2Icon, MoonIcon, SunIcon, XIcon} from "@heroicons/react/outline";
 import clsx from "clsx";
 import {motion, AnimatePresence} from "framer-motion";
 import {BsLinkedin} from 'react-icons/bs';
 import {AiFillGithub, AiOutlineInstagram} from 'react-icons/ai';
+import {ModelContext} from "../../providers/ModalContext";
 
 export default function Nav() {
+    const {isOpen} = useContext(ModelContext);
     const [mounted, setMounted] = useState<boolean>(false);
     const {systemTheme, theme, setTheme} = useTheme();
     const [clicked, setClicked] = useState<boolean | null>(true)
 
-    const navIconClasses = 'rounded-lg w-8 h-8 flex justify-center items-center hover:ring-2 hover:ring-zinc-900 dark:hover:ring-zinc-200 transition-shadow '
-    const linksIconsHover = 'transition-all hover:translate-y-[2px] active:translate-y-0'
+    const navIconClasses = 'rounded-lg w-8 h-8 flex justify-center items-center hover:ring-2 hover:ring-zinc-900 dark:hover:ring-zinc-200 transition-shadow';
+    const linksIconsHover = 'transition-all hover:translate-y-[2px] active:translate-y-0';
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -39,7 +41,7 @@ export default function Nav() {
 
     return (
         <div
-            className='sm:mt-4 fixed sm:relative top-0 right-0 left-0 transition-all duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none z-50 w-full'>
+            className={clsx(isOpen ? 'z-0' : 'z-10', 'sm:mt-4 fixed sm:relative top-0 right-0 left-0 transition duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none w-full')}>
             <div className='flex justify-between items-center my-2 mx-4 sm:mx-0 sm:mt-2'>
                 {/*left nav*/}
                 <button className={clsx(navIconClasses, 'bg-zinc-300 dark:bg-zinc-600 overflow-hidden')}
