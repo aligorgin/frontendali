@@ -4,7 +4,8 @@ import {ModelContext} from '../../providers/ModalContext';
 import {XIcon} from "@heroicons/react/outline";
 import LinksPopup from "./LinksPopup";
 import {PhoneIcon} from "@heroicons/react/solid";
-import {AiOutlineMail} from 'react-icons/ai'
+import {BsLinkedin} from 'react-icons/bs';
+import {AiOutlineMail,AiFillGithub,AiOutlineInstagram,AiOutlineLinkedin} from 'react-icons/ai'
 
 
 export default function PopUp() {
@@ -21,7 +22,7 @@ export default function PopUp() {
                 <div className='p-4'>
                     {/*intro*/}
                     <div className='flex justify-between'>
-                        <p className='flex items-center justify-center opacity-80 text-lg'>I would be glad to talk
+                        <p className='flex items-center justify-center opacity-80 text-lg cursor-default'>I would be glad to talk
                             :)</p>
                         <div
                             className='grid place-items-center w-8 h-8 rounded-md hover:bg-zinc-300 hover:dark:bg-zinc-600 transition cursor-pointer'>
@@ -32,11 +33,11 @@ export default function PopUp() {
                     </div>
                     {/*links*/}
                     <div className='mt-4 flex flex-col space-y-3'>
-                        <LinksPopup label={'+989923349157'} borderColor={'#34A853'} icon={PhoneIcon}/>
-                        <LinksPopup label={'aliigorgin@gmail.com'} borderColor={'#EA4335'} icon={AiOutlineMail}/>
-                        <LinksPopup label={'+989923349157'} icon={PhoneIcon} href={'https://github.com/aligorgin'}/>
-                        <LinksPopup label={'+989923349157'} borderColor={'#F56040'} icon={PhoneIcon} href={'https://github.com/aligorgin'}/>
-                        <LinksPopup label={'+989923349157'} borderColor={'#0A66C2'} icon={PhoneIcon} href={'https://github.com/aligorgin'}/>
+                        <LinksPopup label={'+989923349157'} borderColor={'border-[#34A853]'} icon={PhoneIcon} title={'click to copy'} isCopy={true}/>
+                        <LinksPopup label={'aliigorgin@gmail.com'} borderColor={'border-[#EA4335]'} icon={AiOutlineMail} title={'click to copy'} isCopy={true}/>
+                        <LinksPopup label={'GitHub'} icon={AiFillGithub} href={'https://github.com/aligorgin'}/>
+                        <LinksPopup label={'Instagram'} borderColor={'border-[#833AB4]'} icon={AiOutlineInstagram} href={'https://www.instagram.com/frontendalii/'}/>
+                        <LinksPopup label={'LinkedIn'} borderColor={'border-[#0A66C2]'} icon={BsLinkedin} href={'https://www.linkedin.com/in/ali-gorgin-562b71199'}/>
                     </div>
 
                 </div>
@@ -44,9 +45,3 @@ export default function PopUp() {
         </div>
     )
 }
-
-// -<>  phone number 34A853
-// -<> email address  EA4335
-// -<> github zinc 200 zinc 900
-// -<> instagram F56040
-// -<> linked in 0A66C2

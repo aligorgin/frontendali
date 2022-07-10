@@ -10,7 +10,7 @@ interface Props {
 }
 
 
-export default function Cards({children, desc, iconSrc, image}: Props) {
+export default function Cards({ desc, iconSrc, image}: Props) {
     return (
         <div className='mb-20'>
             <div className='h-[12rem] sm:h-[20rem] min-w-[16rem] sm:min-w-[30.938rem] rounded-lg flex flex-col shadow-lg'>

@@ -37,7 +37,6 @@ export default function Nav() {
             </button>
         )
     }
-    console.log(clicked)
 
     return (
         <div
