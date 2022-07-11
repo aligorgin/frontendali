@@ -22,8 +22,7 @@ export default function PopUp() {
                 <div className='p-4'>
                     {/*intro*/}
                     <div className='flex justify-between'>
-                        <p className='flex items-center justify-center opacity-80 text-lg cursor-default'>I would be glad to talk
-                            :)</p>
+                        <p className='flex items-center justify-center opacity-80 text-lg cursor-default '>I would be glad to talk :)</p>
                         <div
                             className='grid place-items-center w-8 h-8 rounded-md hover:bg-zinc-300 hover:dark:bg-zinc-600 transition cursor-pointer'>
                             <XIcon onClick={() => {
@@ -33,8 +32,8 @@ export default function PopUp() {
                     </div>
                     {/*links*/}
                     <div className='mt-4 flex flex-col space-y-3'>
-                        <LinksPopup label={'+989923349157'} borderColor={'border-[#34A853]'} icon={PhoneIcon} title={'click to copy'} isCopy={true}/>
-                        <LinksPopup label={'aliigorgin@gmail.com'} borderColor={'border-[#EA4335]'} icon={AiOutlineMail} title={'click to copy'} isCopy={true}/>
+                        <LinksPopup label={'+989923349157'} borderColor={'border-[#34A853]'} icon={PhoneIcon} title={'click to copy'} copyType={'phone'}/>
+                        <LinksPopup label={'aliigorgin@gmail.com'} borderColor={'border-[#EA4335]'} icon={AiOutlineMail} title={'click to copy'} copyType={'email'}/>
                         <LinksPopup label={'GitHub'} icon={AiFillGithub} href={'https://github.com/aligorgin'}/>
                         <LinksPopup label={'Instagram'} borderColor={'border-[#833AB4]'} icon={AiOutlineInstagram} href={'https://www.instagram.com/frontendalii/'}/>
                         <LinksPopup label={'LinkedIn'} borderColor={'border-[#0A66C2]'} icon={BsLinkedin} href={'https://www.linkedin.com/in/ali-gorgin-562b71199'}/>
