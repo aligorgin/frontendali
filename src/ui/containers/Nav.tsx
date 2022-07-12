@@ -45,7 +45,7 @@ export default function Nav() {
                 {/*left nav*/}
                 <button className={clsx(navIconClasses, 'bg-zinc-300 dark:bg-zinc-600 overflow-hidden')}
                         onClick={() => setClicked(!clicked)}>
-                    {/*close and un close*/}
+                    {/*close and unclose*/}
                     <motion.div
                         animate={clicked ? {x: 0, opacity: 1} : {x: 13, opacity: 0}}
                         transition={{ease: 'easeOut', duration: .2}}

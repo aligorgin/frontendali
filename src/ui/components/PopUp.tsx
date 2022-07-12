@@ -5,7 +5,7 @@ import {XIcon} from "@heroicons/react/outline";
 import LinksPopup from "./LinksPopup";
 import {PhoneIcon} from "@heroicons/react/solid";
 import {BsLinkedin} from 'react-icons/bs';
-import {AiOutlineMail,AiFillGithub,AiOutlineInstagram,AiOutlineLinkedin} from 'react-icons/ai'
+import {AiOutlineMail,AiFillGithub,AiOutlineInstagram} from 'react-icons/ai'
 
 
 export default function PopUp() {

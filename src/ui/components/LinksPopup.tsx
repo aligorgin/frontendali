@@ -36,13 +36,13 @@ export default function LinksPopup({icon: Icon, label, borderColor, href, title,
             {
                 copyType === 'phone' && show &&
                 <div className='absolute top-0 left-0 w-full h-full bg-[#34A853] grid place-items-center'>
-                    Copied!
+                    Copied !
                 </div>
             }
             {
                 copyType === 'email' && show &&
                 <div className='absolute top-0 left-0 w-full h-full bg-[#EA4335] grid place-items-center'>
-                    Copied!
+                    Copied !
                 </div>
             }
             <Icon className='w-6 h-6 '/>
