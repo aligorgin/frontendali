@@ -12,7 +12,7 @@ export default function PopUp() {
     const {isOpen, setOpen} = useContext(ModelContext);
     return (
         <div
-            className={clsx('h-screen w-full backdrop-blur-md fixed top-0 left-0 transition-all duration-200 grid place-items-center'
+            className={clsx('h-screen w-full backdrop-blur-xl fixed top-0 left-0 transition-all duration-200 grid place-items-center'
                 , isOpen ? 'opacity-100 visible' : 'opacity-0 invisible')}>
             <div onClick={() => {
                 setOpen(false)
