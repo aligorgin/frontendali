@@ -3,7 +3,6 @@ import Words from "../contents/Words";
 import Image from "next/image";
 import useDelayedText from "../../utils/useDelayedText";
 import clsx from "clsx";
-import {useTheme} from "next-themes";
 import {ChatAlt2Icon, DownloadIcon} from "@heroicons/react/outline";
 import {TextLoop} from "react-text-loop-next";
 import {useContext, useEffect, useState} from "react";
@@ -17,6 +16,8 @@ export default function Header() {
     const [cvClicked, setCvClicked] = useState<boolean | null>(null);
     const text = useDelayedText('ello, i\'m Ali', 100);
     const {width, height} = useWindowSize();
+
+
     const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-9/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
 
     useEffect(() => {
@@ -50,7 +51,7 @@ export default function Header() {
                 </div>
             </div>
             <div className='mt-12 flex flex-col sm:flex-row justify-center sm:justify-start items-center'>
-                <a download target={'_blank'} href="../../assets/downloadTest.txt">
+                <a href='https://www.dropbox.com/s/1l73lg8u3po1caw/CSSAnimations.pdf?dl=1'>
                     <button
                         type={'submit'}
                         className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue', 'bg-gradient-to-t from-dark-red to-light-orange')}

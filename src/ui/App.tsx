@@ -5,7 +5,6 @@ import ITechs from "./containers/ITechs";
 import {ModelContext} from "../providers/ModalContext";
 import React, {useMemo, useState} from "react";
 import PopUp from "./components/PopUp";
-import clsx from "clsx";
 
 interface MyObj {
     isOpen: boolean,
@@ -15,8 +14,8 @@ interface MyObj {
 export default function App() {
     const [isOpen, setOpen] = useState<boolean>(false);
     const providerValue = useMemo<MyObj>(() => ({isOpen, setOpen}), [isOpen, setOpen]);
-    return (
 
+    return (
         <div className='max-w-[38.938rem] mx-4 sm:mx-auto'>
             <ModelContext.Provider value={providerValue}>
                 <Nav/>
@@ -26,7 +25,5 @@ export default function App() {
                 <PopUp/>
             </ModelContext.Provider>
         </div>
-
-
     )
 }
