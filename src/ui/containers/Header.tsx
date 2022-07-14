@@ -9,6 +9,8 @@ import {useContext, useEffect, useState} from "react";
 import {ModelContext} from "../../providers/ModalContext";
 import {useWindowSize} from "react-use";
 import ReactConfetti from "react-confetti";
+// I do not know why this has TS2307 error but not .jpg
+// import pdf from '../../../public/CSSAnimations.pdf';
 
 
 export default function Header() {
