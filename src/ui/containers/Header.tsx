@@ -1,4 +1,3 @@
-import Avatar from '../../../public/avatar.jpg';
 import Words from "../contents/Words";
 import Image from "next/image";
 import useDelayedText from "../../utils/useDelayedText";
@@ -9,6 +8,7 @@ import {useContext, useEffect, useState} from "react";
 import {ModelContext} from "../../providers/ModalContext";
 import {useWindowSize} from "react-use";
 import ReactConfetti from "react-confetti";
+import Avatar from '../../../public/avatar.jpg';
 // I do not know why this has TS2307 error but not .jpg
 // import pdf from '../../../public/CSSAnimations.pdf';
 
@@ -25,7 +25,7 @@ export default function Header() {
     useEffect(() => {
         let timer = setTimeout(() => {
             setCvClicked(false);
-        }, 2000)
+        }, 4000)
 
         return () => {
             clearTimeout(timer)
@@ -53,20 +53,18 @@ export default function Header() {
                 </div>
             </div>
             <div className='mt-12 flex flex-col sm:flex-row justify-center sm:justify-start items-center'>
-                <a href='https://www.dropbox.com/s/1l73lg8u3po1caw/CSSAnimations.pdf?dl=1'>
-                    <button
-                        type={'submit'}
-                        className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue', 'bg-gradient-to-t from-dark-red to-light-orange')}
-                        onClick={() => {
-                            setCvClicked(true);
-                        }}
-                    >
-                        <DownloadIcon className='w-6 h-6'/>
-                        <span className='ml-1 text-lg'>CV</span>
-                    </button>
+                <a
+                    href={'#'}
+                    className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue bg-gradient-to-t from-dark-red to-light-orange')}
+                    onClick={() => {
+                        setCvClicked(true);
+                    }}
+                >
+                    <DownloadIcon className='w-6 h-6'/>
+                    <span className='ml-1 text-lg'>CV</span>
                 </a>
                 <button
-                    className={clsx(buttonCssClasses, 'ml-0 mt-4 sm:mt-0 sm:ml-4 border-2', 'dark:border-light-blue', 'border-light-orange')}
+                    className={clsx(buttonCssClasses, 'ml-0 mt-4 sm:mt-0 sm:ml-4 border-2 dark:border-light-blue border-light-orange')}
                     onClick={() => setOpen(true)}
                 >
                     <span className='ml-1 text-lg flex'>

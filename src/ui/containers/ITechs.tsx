@@ -5,7 +5,7 @@ export default function ITechs() {
         {id: 0, name: 'html/css'},
         {id: 1, name: 'javascript'},
         {id: 2, name: 'typescript'},
-        {id: 3, name: 'figma'},
+        {id: 3, name: 'framer'},
         {id: 4, name: 'react'},
         {id: 5, name: 'next.js'},
         {id: 6, name: 'tailwindcss'},
