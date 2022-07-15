@@ -25,7 +25,7 @@ export default function Header() {
     useEffect(() => {
         let timer = setTimeout(() => {
             setCvClicked(false);
-        }, 4000)
+        }, 3000)
 
         return () => {
             clearTimeout(timer)

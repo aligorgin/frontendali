@@ -15,7 +15,9 @@ export default function Cards({ desc, iconSrc, image}: Props) {
         <div className='mb-20'>
             <div className='h-[12rem] sm:h-[20rem] min-w-[16rem] sm:min-w-[30.938rem] rounded-lg flex flex-col shadow-lg'>
                 <div>
+                    {image === 'outdoor' && <ImageCards image={'outdoor'}/>}
                     {image === 'weather' && <ImageCards image={'weather'}/>}
+                    {image === 'twitter' && <ImageCards image={'twitter'}/>}
                 </div>
 
                 <div className='flex justify-between items-center h-full px-2 sm:px-4 text-sm'>
