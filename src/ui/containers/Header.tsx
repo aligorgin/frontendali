@@ -29,7 +29,7 @@ export default function Header() {
     useEffect(() => {
         let timer = setTimeout(() => {
             setCvClicked(false);
-        }, 3000)
+        }, 2500)
 
         return () => {
             clearTimeout(timer)
@@ -48,7 +48,7 @@ export default function Header() {
 
 
     return (
-        <header className='mt-20 sm:mt-12'>
+        <header className='mt-20 sm:mt-8'>
             <div className='flex flex-col-reverse justify-center items-center sm:flex-row '>
                 <div className='text-center sm:text-left'>
                     <h1 className='text-5xl font-bold'>H{text}</h1>
@@ -67,7 +67,7 @@ export default function Header() {
                            objectFit={'cover'}/>
                 </div>
             </div>
-            <div className='mt-12 flex flex-col sm:flex-row justify-center sm:justify-start items-center'>
+            <div className='mt-10 flex flex-col sm:flex-row justify-center sm:justify-start items-center'>
                 <a
                     href={'#'}
                     className={clsx(buttonCssClasses, 'dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue bg-gradient-to-t from-dark-red to-light-orange')}
@@ -87,7 +87,7 @@ export default function Header() {
                     </span>
                 </button>
             </div>
-            {cvClicked && <ReactConfetti width={width - 20} height={height} gravity={1.5}/>}
+            {cvClicked && <ReactConfetti width={width - 20} height={height} gravity={2}/>}
         </header>
     )
 }
