@@ -20,7 +20,7 @@ export default function Cards({ desc, iconSrc, image}: Props) {
                     {image === 'twitter' && <ImageCards image={'twitter'}/>}
                 </div>
 
-                <div className='flex justify-between items-center h-full px-2 sm:px-4 text-sm dark:bg-zinc-700 rounded-br-lg rounded-bl-lg'>
+                <div className='flex justify-between items-center h-full px-2 sm:px-4 text-sm transition duration-200 dark:bg-zinc-700 rounded-br-lg rounded-bl-lg'>
                     <div>{desc}</div>
                     <div
                         className='cursor-pointer transition hover:-translate-y-1 active:-translate-y-0.5 hover:brightness-125 '>
