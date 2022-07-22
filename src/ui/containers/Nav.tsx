@@ -40,7 +40,7 @@ export default function Nav() {
 
     return (
         <div
-            className={clsx(isOpen ? 'z-0' : 'z-10', 'sm:mt-4 fixed sm:relative top-0 right-0 left-0 transition duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none w-full')}>
+            className={clsx('sm:mt-4 fixed sm:relative top-0 right-0 left-0 transition duration-200 dark:bg-zinc-900 bg-zinc-200 shadow-md sm:shadow-none sm:border-none sm:bg-none w-full', isOpen ? 'z-0' : 'z-10',)}>
             <div className='flex justify-between items-center my-2 mx-4 sm:mx-0 sm:mt-2'>
                 {/*left nav*/}
                 <button className={clsx(navIconClasses, 'bg-zinc-300 dark:bg-zinc-600 overflow-hidden')}

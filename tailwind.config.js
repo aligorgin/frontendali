@@ -3,6 +3,15 @@ module.exports = {
     darkMode: "class",
     theme: {
         extend: {
+            animation: {
+                'wiggle': 'wiggle 3s linear infinite',
+            },
+            keyframes: {
+                wiggle: {
+                    '0%, 100%': { transform: 'translateY(3px)' },
+                    '50%': { transform: 'translateY(-3px)' },
+                }
+            },
             boxShadow: {
                 'med-hover': '0 7px 9px -2px rgba(0,0,0,0.25)'
             },

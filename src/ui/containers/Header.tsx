@@ -15,14 +15,13 @@ import TextLoop from "../components/TextLoop";
 
 
 export default function Header() {
-    const {setOpen} = useContext(ModelContext);
     const [index, setIndex] = useState(0);
     const [cvClicked, setCvClicked] = useState<boolean | null>(null);
     const [currentIndex, setCurrentIndex] = useState<boolean | null>(null)
-    const text = useDelayedText('ello, i\'m Ali', 100);
-
-
+    const {setOpen} = useContext(ModelContext);
     const {width, height} = useWindowSize();
+    const text = useDelayedText('ello, i\'m Ali', 100);
+    console.log(height)
 
     const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-9/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
 
@@ -62,7 +61,7 @@ export default function Header() {
                     </div>
                     <div className='mt-0 sm:mt-2 font-normal leading-7 sm:leading-6'>{Words.about}</div>
                 </div>
-                <div className='w-[213px] h-[213px] sm:w-[146px] sm:h-[146px] flex-shrink-0 ml-0 sm:ml-16 mb-4 sm:mb-0'>
+                <div className='w-[213px] h-[213px] sm:w-[146px] sm:h-[146px] flex-shrink-0 ml-0 sm:ml-16 mb-4 sm:mb-0 animate-wiggle'>
                     <Image className='rounded-full filter brightness-110' src={Avatar} alt='a photo of ali'
                            objectFit={'cover'}/>
                 </div>
@@ -87,7 +86,7 @@ export default function Header() {
                     </span>
                 </button>
             </div>
-            {cvClicked && <ReactConfetti width={width - 20} height={height} gravity={2}/>}
+            {cvClicked && <ReactConfetti width={width - 20} height={height > 860 ? height : height + 600} gravity={2}/>}
         </header>
     )
 }
