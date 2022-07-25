@@ -22,7 +22,7 @@ export default function PopUp() {
                 <div className='p-4'>
                     {/*intro*/}
                     <div className='flex justify-between'>
-                        <p className='flex items-center justify-center opacity-80 text-lg cursor-default '>I would be glad to talk :)</p>
+                        <p className='flex items-center justify-center opacity-80 text-lg cursor-default '>It's easy to find me :</p>
                         <div
                             className='grid place-items-center w-8 h-8 rounded-md hover:bg-zinc-300 hover:dark:bg-zinc-600 transition cursor-pointer'>
                             <XIcon onClick={() => {
