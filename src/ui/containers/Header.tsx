@@ -20,7 +20,6 @@ export default function Header() {
     const {setOpen} = useContext(ModelContext);
     const {width, height} = useWindowSize();
     const text = useDelayedText('ello, i\'m Ali', 200);
-    console.log(height)
 
     const buttonCssClasses = 'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-9/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md'
 
