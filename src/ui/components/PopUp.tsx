@@ -35,7 +35,7 @@ export default function PopUp() {
                         <LinksPopup label={'+989923349157'} borderColor={'border-[#34A853]'} icon={PhoneIcon} title={'click to copy'} copyType={'phone'}/>
                         <LinksPopup label={'aliigorgin@gmail.com'} borderColor={'border-[#EA4335]'} icon={AiOutlineMail} title={'click to copy'} copyType={'email'}/>
                         <LinksPopup label={'GitHub'} icon={AiFillGithub} href={'https://github.com/aligorgin'}/>
-                        <LinksPopup label={'Instagram'} borderColor={'border-[#833AB4]'} icon={AiOutlineInstagram} href={'https://www.instagram.com/next.alii/'}/>
+                        <LinksPopup label={'Instagram'} borderColor={'border-[#833AB4]'} icon={AiOutlineInstagram} href={'https://www.instagram.com/nextdotali/'}/>
                         <LinksPopup label={'LinkedIn'} borderColor={'border-[#0A66C2]'} icon={BsLinkedin} href={'https://www.linkedin.com/in/ali-gorgin-562b71199'}/>
                     </div>
 
