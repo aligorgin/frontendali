@@ -1,6 +1,6 @@
 'use client';
 
-import Nav from '@/containers/Header';
+import Nav from '@/containers/Nav';
 import Header from '@/containers/Header';
 import Projects from '@/containers/Projects';
 import ITechs from '@/containers/ITechs';
