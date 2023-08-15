@@ -1,3 +1,5 @@
+'use client';
+
 import ScrollContainer from 'react-indiana-drag-scroll';
 import ImageCard from './components/ImageCards';
 

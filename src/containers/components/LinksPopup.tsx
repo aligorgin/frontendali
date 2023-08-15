@@ -1,3 +1,5 @@
+'use client';
+
 import {ComponentProps, ComponentType, useEffect, useState} from "react";
 import clsx from "clsx";
 

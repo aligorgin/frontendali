@@ -1,3 +1,6 @@
+'use client';
+
+
 import Image from 'next/image';
 import useDelayedText from '../utils/useDelayedText';
 import clsx from 'clsx';

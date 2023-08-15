@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import clsx from 'clsx';
 import { ModelContext } from '../../providers/ModalContext';

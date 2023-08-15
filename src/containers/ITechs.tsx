@@ -1,3 +1,5 @@
+'use client';
+
 import TechNameWithIcon from './components/TechNameWithIcon';
 
 export default function ITechs() {
