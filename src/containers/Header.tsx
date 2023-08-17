@@ -1,22 +1,16 @@
 'use client';
 
-
 import Image from 'next/image';
 import useDelayedText from '../utils/useDelayedText';
 import clsx from 'clsx';
 import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid';
 import { useContext, useEffect, useState } from 'react';
 import { ModelContext } from '../providers/ModalContext';
-import { useWindowSize } from 'react-use';
-// I do not know why this has TS2307 error but not .jpg
-// import pdf from '../../../public/CSSAnimations.pdf';
-// import {motion, AnimatePresence} from "framer-motion";
 import TextLoop from './components/TextLoop';
 
 export default function Header() {
 	const [index, setIndex] = useState(0);
 	const [cvClicked, setCvClicked] = useState<boolean | null>(null);
-	const [currentIndex, setCurrentIndex] = useState<boolean | null>(null);
 	const { setOpen } = useContext(ModelContext);
 	const text = useDelayedText("ello, I'm Ali", 200);
 

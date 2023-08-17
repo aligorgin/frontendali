@@ -2,8 +2,19 @@
 
 import ScrollContainer from 'react-indiana-drag-scroll';
 import ImageCard from './components/ImageCards';
+import { useEffect, useState } from 'react';
 
 export default function Projects() {
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) {
+		return null;
+	}
+
 	return (
 		<section>
 			<h2 className="mt-12 text-4xl  font-semibold">Projects</h2>

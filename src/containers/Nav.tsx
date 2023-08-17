@@ -1,6 +1,5 @@
 'use client';
 
-
 import { useTheme } from 'next-themes';
 import { useContext, useEffect, useState } from 'react';
 import { ChatBubbleLeftRightIcon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/solid';
@@ -23,6 +22,11 @@ export default function Nav() {
 		setMounted(true);
 	}, []);
 
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	// theme logic
 	const renderThemeToggle = () => {
 		if (!mounted) return null;
 		const currentTheme = theme === 'system' ? systemTheme : theme;

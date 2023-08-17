@@ -45,16 +45,16 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 									onLoad={handleImageLoad}
 								/>
 								<div className="absolute left-0 top-0 h-full w-full rounded-tl-md rounded-tr-md bg-transparent transition  hover:backdrop-blur-0 md:hover:bg-black/60 md:hover:backdrop-blur-sm">
-									<div className="flex h-full items-center justify-center underline">
+									<div className="flex h-full items-center justify-center ">
 										{hover && (
 											<>
-												<div className="hidden pr-2 sm:flex">
+												<div className="hidden pr-2 sm:flex text-white">
 													View Website
 												</div>
 												<ArrowTopRightOnSquareIcon
 													width={16}
 													height={16}
-													className="hidden sm:flex"
+													className="hidden sm:flex text-white"
 												/>
 											</>
 										)}
