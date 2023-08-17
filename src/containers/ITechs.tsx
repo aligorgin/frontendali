@@ -16,8 +16,8 @@ export default function ITechs() {
 	];
 
 	return (
-		<div className="mt-10 leading-8 sm:leading-6 ">
-			<p className="leading-7 sm:leading-6">
+		<div className="mt-8 px-4 md:px-0 mx-auto max-w-2xl">
+			<p>
 				Here are a few technologies I&apos;ve been working with recently:
 			</p>
 			{/* <div className="relative mt-6 grid grid-cols-2 justify-items-center gap-y-3 sm:mt-4 sm:grid-cols-3 sm:justify-items-start sm:gap-y-4 ">

@@ -18,7 +18,7 @@ export default function App() {
 	const providerValue = useMemo<MyObj>(() => ({ isOpen, setOpen }), [isOpen, setOpen]);
 
 	return (
-		<div className="mx-4 max-w-[38.938rem] sm:mx-auto">
+		<div>
 			<ModelContext.Provider value={providerValue}>
 				<Nav />
 				<Header />

@@ -16,8 +16,8 @@ export default function Projects() {
 	}
 
 	return (
-		<section>
-			<h2 className="mt-12 text-4xl  font-semibold">Projects</h2>
+		<section className="mx-auto max-w-2xl px-4 md:px-0">
+			<h2 className="mt-8 text-4xl  font-semibold">Projects</h2>
 			<div className="relative mt-4 max-w-full ">
 				<ScrollContainer
 					vertical={false}

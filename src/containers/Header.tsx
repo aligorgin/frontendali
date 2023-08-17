@@ -15,7 +15,7 @@ export default function Header() {
 	const text = useDelayedText("ello, I'm Ali", 200);
 
 	const buttonCssClasses =
-		'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-9/12 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md';
+		'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-2/3 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md';
 
 	useEffect(() => {
 		let timer = setTimeout(() => {
@@ -38,7 +38,7 @@ export default function Header() {
 	}, [index]);
 
 	return (
-		<header className="mt-20 sm:mt-8">
+		<header className="mx-auto mt-8 max-w-2xl px-4 md:px-0">
 			<div className="flex flex-col-reverse items-center justify-center sm:flex-row ">
 				<div className="text-center sm:text-left">
 					<h1 className="text-5xl font-bold">H{text}</h1>
@@ -51,9 +51,9 @@ export default function Header() {
 						<TextLoop index={index} />
 						<div
 							className={clsx(
-								index === 0 && 'translate-x-[5.5rem] ',
-								index === 1 && 'translate-x-[6.7rem]',
-								index === 2 && 'translate-x-[7rem]',
+								index === 0 && 'translate-x-[5.8rem] ',
+								index === 1 && 'translate-x-[7rem]',
+								index === 2 && 'translate-x-[7.6rem]',
 								'transition-transform duration-500'
 							)}
 						>
@@ -85,7 +85,7 @@ export default function Header() {
 					onClick={() => setOpen(true)}
 				>
 					<span className="ml-1 flex text-lg">
-						<ChatBubbleLeftRightIcon className="h-6 w-6 text-zinc-200" />
+						<ChatBubbleLeftRightIcon className="w-7 text-zinc-200" />
 					</span>
 				</button>
 			</div>
