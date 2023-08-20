@@ -10,22 +10,22 @@ import TextLoop from './components/TextLoop';
 
 export default function Header() {
 	const [index, setIndex] = useState(0);
-	const [cvClicked, setCvClicked] = useState<boolean | null>(null);
+	// const [cvClicked, setCvClicked] = useState<boolean | null>(null);
 	const { setOpen } = useContext(ModelContext);
 	const text = useDelayedText("ello, I'm Ali", 200);
 
 	const buttonCssClasses =
 		'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-2/3 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md';
 
-	useEffect(() => {
-		let timer = setTimeout(() => {
-			setCvClicked(false);
-		}, 2500);
+	// useEffect(() => {
+	// 	let timer = setTimeout(() => {
+	// 		setCvClicked(false);
+	// 	}, 2500);
 
-		return () => {
-			clearTimeout(timer);
-		};
-	}, [cvClicked]);
+	// 	return () => {
+	// 		clearTimeout(timer);
+	// 	};
+	// }, [cvClicked]);
 
 	useEffect(() => {
 		setTimeout(() => {

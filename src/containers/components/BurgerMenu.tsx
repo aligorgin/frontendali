@@ -1,10 +1,14 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
-export default function BurgerMenu() {
+interface Props {
+	children?: React.ReactNode;
+}
+
+export default function BurgerMenu({ children }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const classes = 'z-50 w-full h-1 bg-zinc-900 dark:bg-zinc-200 rounded-md transition-all';
-	const navItems = ['Home', ''];
+	const navItems = ['Home', 'Recipes'];
 
 	function toggleMenu() {
 		setIsMenuOpen(!isMenuOpen);
@@ -37,24 +41,27 @@ export default function BurgerMenu() {
 			{/* Menu */}
 			<div
 				className={clsx(
-					'fixed right-0 top-0 z-50 h-full w-3/4 bg-zinc-200 pt-12 shadow-md transition-transform ease-out dark:bg-zinc-900',
+					'fixed right-0 top-0 z-50 h-full w-3/4 justify-between bg-zinc-200 pt-12 shadow-md transition-transform ease-out dark:bg-zinc-900',
 					isMenuOpen ? 'translate-x-0' : 'translate-x-full'
 				)}
 			>
 				<div className="mb-6 mt-2 h-[0.5px] w-full bg-zinc-900/20 dark:bg-zinc-200/20" />
-				<div className="mx-4 flex flex-col items-center justify-center divide-y-[0.5px] divide-zinc-900/40 dark:divide-zinc-200/40">
-					{navItems.map((item, index) => {
-						return (
-							<a
-								className="w-full cursor-pointer list-none px-2 py-4 transition"
-								key={index}
-								href={`#${item}`}
-								onClick={toggleMenu}
-							>
-								{item}
-							</a>
-						);
-					})}
+				<div className="flex h-screen flex-col justify-between px-4 ">
+					<div className="flex flex-col">
+						{navItems.map((item, index) => {
+							return (
+								<a
+									className="w-full cursor-pointer list-none px-2 py-4 transition"
+									key={index}
+									href={`#${item}`}
+									onClick={toggleMenu}
+								>
+									{item}
+								</a>
+							);
+						})}
+					</div>
+					<div className="mb-28">{children}</div>
 				</div>
 			</div>
 		</div>

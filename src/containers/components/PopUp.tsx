@@ -34,14 +34,14 @@ export default function PopUp() {
 					{/*intro*/}
 					<div className="flex justify-between">
 						<p className="flex cursor-default items-center justify-center text-lg opacity-80 ">
-							It&lsquo;s easy to find me :
+							Reach me at:
 						</p>
-						<div className="grid h-8 w-8 cursor-pointer place-items-center rounded-md transition hover:bg-zinc-300 hover:dark:bg-zinc-600">
+						<div className="grid h-8 w-8 cursor-pointer place-items-center rounded-md  transition dark: sm:bg-none sm:hover:bg-zinc-300 sm:hover:dark:bg-zinc-600">
 							<XMarkIcon
 								onClick={() => {
 									setOpen(false);
 								}}
-								className="h-6 w-6"
+								className="w-6"
 							/>
 						</div>
 					</div>
