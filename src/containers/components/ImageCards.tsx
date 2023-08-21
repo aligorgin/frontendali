@@ -24,7 +24,7 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 	return (
 		<>
 			<div className="mb-[3rem]">
-				<div className="flex h-full min-w-[19rem] flex-col rounded-md shadow-md sm:h-[19rem] sm:min-w-[30.938rem]">
+				<div className="flex h-full min-w-[19rem] flex-col rounded-md shadow-lg dark:shadow-white/20 sm:h-[19rem] sm:min-w-[30.938rem]">
 					<div>
 						<a href={websiteSrc} target={'_blank'} rel="noreferrer">
 							<div

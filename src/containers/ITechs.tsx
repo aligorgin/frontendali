@@ -1,7 +1,5 @@
 'use client';
 
-import TechNameWithIcon from './components/TechNameWithIcon';
-
 export default function ITechs() {
 	const techNames = [
 		{ id: 0, name: 'HTML/Css' },

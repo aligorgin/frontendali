@@ -7,7 +7,7 @@ interface Props {
 
 export default function BurgerMenu({ children }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const classes = 'z-50 w-full h-1 bg-zinc-900 dark:bg-zinc-200 rounded-md transition-all';
+	const classes = 'z-50 w-full h-1 bg-black dark:bg-white rounded-md transition-all duration-200';
 	const navItems = ['Home', 'Recipes'];
 
 	function toggleMenu() {
@@ -41,11 +41,11 @@ export default function BurgerMenu({ children }: Props) {
 			{/* Menu */}
 			<div
 				className={clsx(
-					'fixed right-0 top-0 z-50 h-full w-3/4 justify-between bg-zinc-200 pt-12 shadow-md transition-transform ease-out dark:bg-zinc-900',
+					'fixed right-0 top-0 z-50 h-full w-3/4 justify-between bg-white pt-12 shadow-md transition-transform ease-out dark:bg-black',
 					isMenuOpen ? 'translate-x-0' : 'translate-x-full'
 				)}
 			>
-				<div className="mb-6 mt-2 h-[0.5px] w-full bg-zinc-900/20 dark:bg-zinc-200/20" />
+				<div className="mb-6 mt-2 h-[0.5px] w-full bg-black/20 dark:bg-white/20" />
 				<div className="flex h-screen flex-col justify-between px-4 ">
 					<div className="flex flex-col">
 						{navItems.map((item, index) => {

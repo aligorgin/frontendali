@@ -12,10 +12,10 @@ export default function Header() {
 	const [index, setIndex] = useState(0);
 	// const [cvClicked, setCvClicked] = useState<boolean | null>(null);
 	const { setOpen } = useContext(ModelContext);
-	const text = useDelayedText("ello, I'm Ali", 200);
+	const text = useDelayedText("ello, I'm Ali", 500);
 
 	const buttonCssClasses =
-		'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-100 text-white justify-center items-center w-2/3 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md';
+		'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-200 text-white justify-center items-center w-2/3 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md';
 
 	// useEffect(() => {
 	// 	let timer = setTimeout(() => {
@@ -28,13 +28,17 @@ export default function Header() {
 	// }, [cvClicked]);
 
 	useEffect(() => {
-		setTimeout(() => {
+		const timeOut = setTimeout(() => {
 			let next = index + 1;
 			if (next === 3) {
 				next = 0;
 			}
 			setIndex(next);
 		}, 3 * 600);
+
+		return () => {
+			clearTimeout(timeOut);
+		};
 	}, [index]);
 
 	return (
@@ -51,9 +55,9 @@ export default function Header() {
 						<TextLoop index={index} />
 						<div
 							className={clsx(
-								index === 0 && 'translate-x-[5.8rem] ',
-								index === 1 && 'translate-x-[7rem]',
-								index === 2 && 'translate-x-[7.6rem]',
+								index === 0 && 'translate-x-[5.6rem] ',
+								index === 1 && 'translate-x-[6.7rem]',
+								index === 2 && 'translate-x-[7.4rem]',
 								'transition-transform duration-500'
 							)}
 						>
