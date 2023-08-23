@@ -1,27 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
+// Child component
 const ChildComponent = ({ count, increment }: any) => {
 	return (
 		<div>
-			<p>Count:{count}</p>
+			<p>Count: {count}</p>
 			<button onClick={increment}>Increment</button>
 		</div>
 	);
 };
 
+// Parent component
 const ParentComponent = () => {
-	let [count, setCount] = useState<any>(0);
+	const [count, setCount] = useState(0);
 
-	const IncrementCount = () => {
+	const incrementCount = () => {
 		setCount(count + 1);
 	};
 
 	return (
 		<div>
-			<div>exapmle</div>
-			<ChildComponent count={count} increment={IncrementCount} />
+			<h1>Lifting State Up Example</h1>
+			<ChildComponent count={count} increment={incrementCount} />
 		</div>
 	);
 };

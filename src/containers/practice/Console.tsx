@@ -37,7 +37,7 @@ function multipleGeneretor() {
 		};
 	}
 
-	const f4 = f(3);
+	const f4 = f(4);
 
 	console.log(f4());
 	console.log(f4());
@@ -119,4 +119,14 @@ function init() {
 }
 init();
 
-console.log(sum([2, 5, 1, 5]));
+function mutilpleNumbersOfThreeAndFive(n: number) {
+	let sum = 0;
+	for (let i = 0; i < n; i++) {
+		if (i % 3 === 0 || i % 5 === 0) {
+			sum = sum + i;
+		}
+	}
+	return sum;
+}
+
+console.log(mutilpleNumbersOfThreeAndFive(1000));
