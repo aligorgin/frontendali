@@ -1,4 +1,6 @@
-'use client';
+// 'use client'
+// if you import it to another compoennt that have 'use client' you dont need to
+// make it client in this component, like tree hierarchy
 
 import React, { useState } from 'react';
 
