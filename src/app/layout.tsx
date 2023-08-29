@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={inter.className}>
 				<Providers>
 					<Nav>
-						<div className="mx-auto max-w-2xl px-4 md:px-0">{children} </div>
+						<div className="mx-auto max-w-2xl">{children} </div>
 					</Nav>
 				</Providers>
 			</body>

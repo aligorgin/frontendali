@@ -1,21 +1,28 @@
 'use client';
 
 import { useContext, useState } from 'react';
-import { ChatBubbleLeftRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
-import { motion, AnimatePresence } from 'framer-motion';
-import { BsLinkedin } from 'react-icons/bs';
-import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai';
 import { ModelContext } from '../providers/ModalContext';
 import BurgerMenu from './components/BurgerMenu';
 import Link from 'next/link';
-import ThemeToggle from './components/ThemeToggle';
+import { usePathname } from 'next/navigation';
 import NavSocialDesktopIcons from './components/NavSocialDesktopIcons';
 import BurgerMenuChildren from './components/BurgerMenuChildren';
 
 export default function Nav({ children }: { children?: React.ReactNode }) {
 	const { isOpen } = useContext(ModelContext);
-	const [clicked, setClicked] = useState<boolean | null>(false);
+	const pathname = usePathname();
+
+	const navLinks = [
+		{
+			name: 'Home',
+			path: '/'
+		},
+		{
+			name: 'Goodies',
+			path: '/goodies'
+		}
+	];
 
 	return (
 		<div>
@@ -26,15 +33,25 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 				)}
 			>
 				<div className="mx-auto max-w-2xl">
-					<div className="flex items-center justify-between p-3 md:px-0">
+					<div className="flex h-[52px] items-center justify-between px-4 md:px-0">
 						{/* nav elements */}
 						<div className="hidden space-x-8 sm:flex">
-							<Link href="/" className={clsx('text-black dark:text-white')}>
-								Home
-							</Link>
-							<Link href="/goodies" className={clsx('text-black dark:text-white')}>
-								Goodies
-							</Link>
+							{navLinks.map((link, index) => {
+								const isActive = pathname === link.path;
+								return (
+									<Link
+										key={index}
+										href={link.path}
+										className={clsx(
+											isActive
+												? 'border-b text-red-600 dark:border-b-blue-500 dark:text-blue-500'
+												: 'text-black/60 transition hover:text-black dark:text-white/60 dark:hover:text-white'
+										)}
+									>
+										{link.name}
+									</Link>
+								);
+							})}
 						</div>
 						<div>
 							<h1 className="relative text-2xl sm:hidden">Ali Gorgin</h1>

@@ -11,21 +11,8 @@ import { motion } from 'framer-motion';
 
 export default function Header() {
 	const [index, setIndex] = useState(0);
-	// const [cvClicked, setCvClicked] = useState<boolean | null>(null);
 	const { setOpen } = useContext(ModelContext);
 	const text = useDelayedText("ello, I'm Ali", 500);
-
-	const buttonCssClasses =
-		'flex shadow-lg active:scale-95 active:shadow hover:shadow-med-hover sm:hover:-translate-y-[2px] sm:active:translate-y-0 hover:brightness-110 transition-all duration-200 text-white justify-center items-center w-2/3 h-[48px] sm:w-[170px] sm:h-[40px] rounded-md';
-
-	// useEffect(() => {
-	// 	let timer = setTimeout(() => {
-	// 		setCvClicked(false);
-	// 	}, 2500);
-	// 	return () => {
-	// 		clearTimeout(timer);
-	// 	};
-	// }, [cvClicked]);
 
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
@@ -43,9 +30,9 @@ export default function Header() {
 
 	return (
 		<motion.header
-			initial={{ x: 0, y: -300, opacity: 0 }}
+			initial={{ x: 0, y: -50, opacity: 0 }}
 			animate={{ x: 0, y: 0, opacity: 1 }}
-			transition={{ type: 'spring', duration: 1, bounce: 0.25, delay: 0 }}
+			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
 			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
 		>
 			<div className="flex flex-col-reverse items-center justify-center sm:flex-row ">
@@ -69,7 +56,7 @@ export default function Header() {
 							Developer
 						</div>
 					</div>
-					<div className="mt-0 font-normal leading-7 sm:mt-2 sm:leading-6">
+					<div className="mt-0 sm:mt-2 sm:leading-6 text-lg sm:text-base">
 						Greetings! I&lsquo;m Ali Gorgin, a self-taught Front-End Developer living in
 						Tehran. With a knack for creating and enhancing web apps, I invite you to
 						explore my portfolio.
@@ -88,8 +75,8 @@ export default function Header() {
 			<div className="mt-10 flex flex-col items-center justify-center sm:flex-row sm:justify-start">
 				<button
 					className={clsx(
-						buttonCssClasses,
-						'bg-gradient-to-t from-dark-red to-light-orange dark:bg-gradient-to-t dark:from-dark-purple dark:to-light-blue'
+						'flex h-[48px] w-[280px] items-center justify-center rounded-md text-white shadow-lg transition-all duration-200 active:scale-95 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0',
+						'bg-gradient-to-t from-red-600 to-red-400 dark:bg-gradient-to-t dark:from-blue-600 dark:to-blue-400'
 					)}
 					onClick={() => setOpen(true)}
 				>

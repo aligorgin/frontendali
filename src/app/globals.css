@@ -32,7 +32,7 @@ html {
 }
 
 body {
-	@apply bg-white text-[18px] text-black antialiased transition-all duration-200 dark:bg-black dark:text-white sm:text-[16px];
+	@apply bg-white text-black antialiased transition-all duration-200 dark:bg-black dark:text-white;
 	scroll-behavior: smooth;
 }
 

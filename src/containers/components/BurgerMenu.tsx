@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 export default function BurgerMenu({ children }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const classes = 'z-50 w-full h-1 bg-black dark:bg-white rounded-md transition-all duration-200';
+	const pathname = usePathname();
 	const navItems = [
 		{
 			name: 'Home',
@@ -59,9 +61,15 @@ export default function BurgerMenu({ children }: Props) {
 				<div className="flex h-screen flex-col justify-between px-4 ">
 					<div className="flex flex-col">
 						{navItems.map((item, index) => {
+							const isActive = pathname === item.path;
 							return (
 								<Link
-									className="w-full cursor-pointer list-none px-2 py-4 transition"
+									className={clsx(
+										isActive
+											? 'text-red-600 dark:text-blue-500'
+											: 'text-black/60 transition hover:text-black dark:text-white/60 dark:hover:text-white',
+										'w-full cursor-pointer list-none px-2 py-4 text-xl transition'
+									)}
 									key={index}
 									href={item.path}
 									onClick={toggleMenu}
