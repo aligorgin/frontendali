@@ -8,11 +8,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import NavSocialDesktopIcons from './components/NavSocialDesktopIcons';
 import BurgerMenuChildren from './components/BurgerMenuChildren';
+import { motion } from 'framer-motion';
 
 export default function Nav({ children }: { children?: React.ReactNode }) {
 	const { isOpen } = useContext(ModelContext);
 	const pathname = usePathname();
-
 	const navLinks = [
 		{
 			name: 'Home',
@@ -44,10 +44,22 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 										href={link.path}
 										className={clsx(
 											isActive
-												? 'border-b text-red-600 dark:border-b-blue-500 dark:text-blue-500'
-												: 'text-black/60 transition hover:text-black dark:text-white/60 dark:hover:text-white'
+												? 'text-red-600 dark:text-blue-500'
+												: 'text-black/60 transition hover:text-black dark:text-white/60 dark:hover:text-white',
+											'relative'
 										)}
 									>
+										{isActive && (
+											<motion.div
+												layoutId="border"
+												className="absolute bottom-[-14px] z-10 h-[1px] w-full bg-red-500 dark:bg-blue-500"
+												transition={{
+													type: 'spring',
+													bounce: 0.2,
+													duration: 0.5
+												}}
+											/>
+										)}
 										{link.name}
 									</Link>
 								);
