@@ -2,8 +2,26 @@
 // if you import it to another compoennt that have 'use client' you dont need to
 // make it client in this component, like tree hierarchy
 
-export default function Page() {
+export default function Console() {
 	return <div>Open the Console</div>;
+}
+
+function multipleGeneretor() {
+	function f(n: number) {
+		let counter = 1;
+		return () => {
+			const result = n * counter;
+			counter++;
+			return result;
+		};
+	}
+
+	const f4 = f(4);
+
+	console.log(f4());
+	console.log(f4());
+	console.log(f4());
+	console.log(f4());
 }
 
 function whatIsThis() {
@@ -27,24 +45,6 @@ function executionOrder() {
 	}, 0);
 
 	console.log(3);
-}
-
-function multipleGeneretor() {
-	function f(n: number) {
-		let counter = 1;
-		return () => {
-			const result = n * counter;
-			counter++;
-			return result;
-		};
-	}
-
-	const f4 = f(4);
-
-	console.log(f4());
-	console.log(f4());
-	console.log(f4());
-	console.log(f4());
 }
 
 function factorial(n: number) {
@@ -130,5 +130,3 @@ function mutilpleNumbersOfThreeAndFive(n: number) {
 	}
 	return sum;
 }
-
-console.log(mutilpleNumbersOfThreeAndFive(1000));

@@ -7,6 +7,7 @@ import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid';
 import { useContext, useEffect, useState } from 'react';
 import { ModelContext } from '../providers/ModalContext';
 import TextLoop from './components/TextLoop';
+import { motion } from 'framer-motion';
 
 export default function Header() {
 	const [index, setIndex] = useState(0);
@@ -21,7 +22,6 @@ export default function Header() {
 	// 	let timer = setTimeout(() => {
 	// 		setCvClicked(false);
 	// 	}, 2500);
-
 	// 	return () => {
 	// 		clearTimeout(timer);
 	// 	};
@@ -42,7 +42,12 @@ export default function Header() {
 	}, [index]);
 
 	return (
-		<header className="mx-auto mt-8 max-w-2xl px-4 md:px-0">
+		<motion.header
+			initial={{ x: 0, y: -300, opacity: 0 }}
+			animate={{ x: 0, y: 0, opacity: 1 }}
+			transition={{ type: 'spring', duration: 1, bounce: 0.25, delay: 0 }}
+			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
+		>
 			<div className="flex flex-col-reverse items-center justify-center sm:flex-row ">
 				<div className="text-center sm:text-left">
 					<h1 className="text-5xl font-bold">H{text}</h1>
@@ -55,9 +60,9 @@ export default function Header() {
 						<TextLoop index={index} />
 						<div
 							className={clsx(
-								index === 0 && 'translate-x-[5.6rem] ',
-								index === 1 && 'translate-x-[6.7rem]',
-								index === 2 && 'translate-x-[7.4rem]',
+								index === 0 && 'translate-x-[5.9rem] ',
+								index === 1 && 'translate-x-[7rem]',
+								index === 2 && 'translate-x-[7.7rem]',
 								'transition-transform duration-500'
 							)}
 						>
@@ -65,8 +70,8 @@ export default function Header() {
 						</div>
 					</div>
 					<div className="mt-0 font-normal leading-7 sm:mt-2 sm:leading-6">
-						Greetings! I&lsquo;m Ali Gorgin, a self-taught Front-End Developer residing
-						in Tehran. With a knack for creating and enhancing web apps, I invite you to
+						Greetings! I&lsquo;m Ali Gorgin, a self-taught Front-End Developer living in
+						Tehran. With a knack for creating and enhancing web apps, I invite you to
 						explore my portfolio.
 					</div>
 				</div>
@@ -93,6 +98,6 @@ export default function Header() {
 					</span>
 				</button>
 			</div>
-		</header>
+		</motion.header>
 	);
 }

@@ -1,6 +1,5 @@
 'use client';
 
-import Nav from '@/containers/Nav';
 import Header from '@/containers/Header';
 import Projects from '@/containers/Projects';
 import ITechs from '@/containers/ITechs';
@@ -16,16 +15,16 @@ interface MyObj {
 export default function App() {
 	const [isOpen, setOpen] = useState<boolean>(false);
 	const providerValue = useMemo<MyObj>(() => ({ isOpen, setOpen }), [isOpen, setOpen]);
+	
 
 	return (
-		<div>
+		<>
 			<ModelContext.Provider value={providerValue}>
-				<Nav />
 				<Header />
 				<ITechs />
 				<Projects />
 				<PopUp />
 			</ModelContext.Provider>
-		</div>
+		</>
 	);
 }

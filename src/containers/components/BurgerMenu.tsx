@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 interface Props {
@@ -8,7 +9,16 @@ interface Props {
 export default function BurgerMenu({ children }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const classes = 'z-50 w-full h-1 bg-black dark:bg-white rounded-md transition-all duration-200';
-	const navItems = ['Home', 'Recipes'];
+	const navItems = [
+		{
+			name: 'Home',
+			path: '/'
+		},
+		{
+			name: 'Goodies',
+			path: '/goodies'
+		}
+	];
 
 	function toggleMenu() {
 		setIsMenuOpen(!isMenuOpen);
@@ -50,14 +60,14 @@ export default function BurgerMenu({ children }: Props) {
 					<div className="flex flex-col">
 						{navItems.map((item, index) => {
 							return (
-								<a
+								<Link
 									className="w-full cursor-pointer list-none px-2 py-4 transition"
 									key={index}
-									href={`#${item}`}
+									href={item.path}
 									onClick={toggleMenu}
 								>
-									{item}
-								</a>
+									{item.name}
+								</Link>
 							);
 						})}
 					</div>

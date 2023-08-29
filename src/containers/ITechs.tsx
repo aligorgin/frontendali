@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function ITechs() {
 	const techNames = [
 		{ id: 0, name: 'HTML/Css' },
@@ -14,10 +16,13 @@ export default function ITechs() {
 	];
 
 	return (
-		<div className="mt-8 px-4 md:px-0 mx-auto max-w-2xl">
-			<p>
-				Here are a few technologies I&apos;ve been working with recently:
-			</p>
+		<motion.div
+			initial={{ x: 0, scale: 0, y: 0, opacity: 0 }}
+			animate={{ x: 0, scale: 1, y: 0, opacity: 1 }}
+			transition={{ type: 'spring', duration: 1.25, bounce: 0.25, delay: 0 }}
+			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
+		>
+			<p>Here are a few technologies I&apos;ve been working with recently:</p>
 			{/* <div className="relative mt-6 grid grid-cols-2 justify-items-center gap-y-3 sm:mt-4 sm:grid-cols-3 sm:justify-items-start sm:gap-y-4 ">
 				<div className="absolute left-1/2 right-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-light-orange dark:bg-light-blue sm:hidden" />
 				{techNames.map((name) => (
@@ -40,6 +45,6 @@ export default function ITechs() {
 					</div>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 }
