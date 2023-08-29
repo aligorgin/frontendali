@@ -10,7 +10,7 @@ import Console from '../../containers/practice/Console';
 export default function Page() {
 	return (
 		<div className="flex min-h-screen items-center justify-center">
-			<Console />
+			<FlipingCard />
 		</div>
 	);
 }

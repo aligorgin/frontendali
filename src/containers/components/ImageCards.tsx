@@ -48,13 +48,13 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 									<div className="flex h-full items-center justify-center ">
 										{hover && (
 											<>
-												<div className="hidden pr-2 sm:flex text-white">
+												<div className="hidden pr-2 text-white sm:flex">
 													View Website
 												</div>
 												<ArrowTopRightOnSquareIcon
 													width={16}
 													height={16}
-													className="hidden sm:flex text-white"
+													className="hidden text-white sm:flex"
 												/>
 											</>
 										)}
