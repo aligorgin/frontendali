@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import NavSocialDesktopIcons from './components/NavSocialDesktopIcons';
 import BurgerMenuChildren from './components/BurgerMenuChildren';
 import { motion } from 'framer-motion';
-import IconSvg from './components/IconSvg';
+import LogoSvg from './components/IconSvg';
 
 export default function Nav({ children }: { children?: React.ReactNode }) {
 	const { isOpen } = useContext(ModelContext);
@@ -68,7 +68,7 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 						</div>
 						<div>
 							<Link className="relative rounded-md text-2xl sm:hidden" href={'/'}>
-								<IconSvg />
+								<LogoSvg />
 							</Link>
 						</div>
 
