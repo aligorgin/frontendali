@@ -38,7 +38,7 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 								<Image
 									src={`${imageSrc}`}
 									fill
-									sizes="100vw"
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 									className="rounded-tl-md rounded-tr-md object-cover"
 									alt={alt}
 									priority

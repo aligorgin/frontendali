@@ -9,7 +9,8 @@ interface Props {
 
 export default function BurgerMenu({ children }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const classes = 'z-50 w-full h-1 bg-black dark:bg-white rounded-md transition-all duration-200';
+	const classes =
+		'z-50 w-full h-[1px] bg-black dark:bg-white rounded-md transition-all duration-200';
 	const pathname = usePathname();
 	const navItems = [
 		{
@@ -32,7 +33,7 @@ export default function BurgerMenu({ children }: Props) {
 				{/* Burger menu icon */}
 				<button
 					onClick={toggleMenu}
-					className="fixed right-4 top-4 z-[99] flex h-6 w-8 flex-col justify-between ease-in-out"
+					className="fixed right-4 top-[17px] z-[99] flex h-5 w-8 flex-col justify-between ease-in-out"
 				>
 					<div className={clsx(classes, isMenuOpen && 'translate-y-[.7rem] rotate-45')} />
 					<div className={clsx(classes, isMenuOpen && '-translate-x-full opacity-0')} />

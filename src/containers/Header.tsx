@@ -35,7 +35,7 @@ export default function Header() {
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
 			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
 		>
-			<div className="flex flex-col-reverse items-center justify-center sm:flex-row ">
+			<div className="relative flex flex-col-reverse items-center justify-center sm:flex-row">
 				<div className="text-center sm:text-left">
 					<h1 className="text-5xl font-bold">H{text}</h1>
 					<div
@@ -56,23 +56,26 @@ export default function Header() {
 							Developer
 						</div>
 					</div>
-					<div className="mt-0 sm:mt-2 sm:leading-6 text-lg sm:text-base">
-						Greetings! I&lsquo;m Ali Gorgin, a self-taught Front-End Developer living in
-						Tehran. With a knack for creating and enhancing web apps, I invite you to
-						explore my portfolio.
+					<div className="pt-2 leading-relaxed sm:text-base sm:leading-6">
+						Greetings! I&lsquo;m Ali Gorgin, a self-taught Frontend Developer residing
+						in Tehran. I like to implement beautiful and functional details that allow
+						users to enjoy working with the application.
 					</div>
+					<div className="absolute right-1/2 top-1/3 -z-50 h-[500px] w-[100px] bg-gradient-to-tr from-blue-400/60 to-cyan-400/60 blur-[200px] sm:hidden" />
+					<div className="absolute left-1/2 top-1/3 -z-50 h-[500px] w-[100px] bg-gradient-to-tr from-blue-400/60 to-cyan-400/60 blur-[200px] sm:hidden" />
 				</div>
 				<div className="relative mb-4 ml-0 h-[213px] w-[213px] flex-shrink-0 sm:mb-0 sm:ml-16 sm:h-[146px] sm:w-[146px]">
 					<Image
 						src={'/avatar.jpg'}
 						fill
 						className="rounded-xl object-cover"
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt={'Ali Gorgin'}
 						priority
 					/>
 				</div>
 			</div>
-			<div className="mt-10 flex flex-col items-center justify-center sm:flex-row sm:justify-start">
+			<div className="flex flex-col items-center justify-center pt-8 sm:flex-row sm:justify-start">
 				<button
 					className={clsx(
 						'flex h-[48px] w-[280px] items-center justify-center rounded-md text-white shadow-lg transition-all duration-200 active:scale-95 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0',
