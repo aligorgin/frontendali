@@ -15,9 +15,9 @@ export default function FlipingCard() {
 									Some quick example text to build on the card title and make up
 									the bulk of the card&apos;s content.
 								</p>
-								<div className="w-fit rounded-md bg-blue-700 px-4 py-2 text-white">
+								{/* <div className="w-fit rounded-md bg-blue-700 px-4 py-2 text-white">
 									Go somewhere
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

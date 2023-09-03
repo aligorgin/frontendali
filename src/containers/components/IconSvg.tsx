@@ -4,6 +4,7 @@ export default function LogoSvg() {
 			<svg
 				width="32"
 				height="32"
+				className="rounded-md"
 				viewBox="0 0 64 64"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"

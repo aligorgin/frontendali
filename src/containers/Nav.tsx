@@ -67,7 +67,10 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 							})}
 						</div>
 						<div>
-							<Link className="relative rounded-md text-2xl sm:hidden" href={'/'}>
+							<Link
+								className="relative sm:hidden"
+								href={'/'}
+							>
 								<LogoSvg />
 							</Link>
 						</div>
