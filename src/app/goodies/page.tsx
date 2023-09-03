@@ -1,0 +1,24 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Goodies from '../../containers/components/Goodies';
+
+export default function Page() {
+	return (
+		<motion.div
+			initial={{ x: 0, y: -50, opacity: 0 }}
+			animate={{ x: 0, y: 0, opacity: 1 }}
+			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
+			className="px-4 pt-8 md:px-0"
+		>
+			<div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+				<Goodies
+					href="/fliping-card"
+					src="/flipingCard.png"
+					alt="fliping Card"
+					name="Fliping Card"
+				/>
+			</div>
+		</motion.div>
+	);
+}

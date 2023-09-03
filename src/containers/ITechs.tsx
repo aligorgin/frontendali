@@ -1,4 +1,6 @@
-import TechNameWithIcon from './components/TechNameWithIcon';
+'use client';
+
+import { motion } from 'framer-motion';
 
 export default function ITechs() {
 	const techNames = [
@@ -14,32 +16,23 @@ export default function ITechs() {
 	];
 
 	return (
-		<div className="mt-10 leading-8 sm:leading-6 ">
-			<p className="leading-7 sm:leading-6">
-				Here are a few technologies I&apos;ve been working with recently:
-			</p>
-			{/* <div className="relative mt-6 grid grid-cols-2 justify-items-center gap-y-3 sm:mt-4 sm:grid-cols-3 sm:justify-items-start sm:gap-y-4 ">
-				<div className="absolute left-1/2 right-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-light-orange dark:bg-light-blue sm:hidden" />
-				{techNames.map((name) => (
-					<>
-						<div key={name.id} className="ml-0 flex flex-wrap items-center sm:ml-6">
-							<span className="flex h-5  items-center justify-center border-l-0 border-l-light-orange pl-2 dark:border-l-light-blue sm:border-l-2">
-								{name.name}
-							</span>
-						</div>
-					</>
-				))}
-			</div> */}
+		<motion.div
+			initial={{ x: 50, y: 0, opacity: 0 }}
+			animate={{ x: 0, y: 0, opacity: 1 }}
+			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
+			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
+		>
+			<p>Here are a few technologies I&apos;ve been working with recently:</p>
 			<div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
 				{techNames.map((name, index) => (
 					<div
-						className="rounded border-[.5px] border-light-orange px-4 py-2 transition hover:scale-105 dark:border-light-blue"
+						className="rounded border-[0.5px] border-red-400 px-4 py-2 transition hover:scale-105 dark:border-blue-400"
 						key={index}
 					>
 						{name.name}
 					</div>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 }

@@ -1,10 +1,29 @@
+'use client';
+
 import ScrollContainer from 'react-indiana-drag-scroll';
 import ImageCard from './components/ImageCards';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) {
+		return null;
+	}
+
 	return (
-		<section>
-			<h2 className="mt-12 text-4xl  font-semibold">Projects</h2>
+		<motion.section
+			initial={{ x: -50, opacity: 0 }}
+			animate={{ x: 0, opacity: 1 }}
+			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
+			className="mx-auto max-w-2xl px-4 md:px-0"
+		>
+			<h2 className="mt-8 text-4xl  font-semibold">Projects</h2>
 			<div className="relative mt-4 max-w-full ">
 				<ScrollContainer
 					vertical={false}
@@ -61,6 +80,6 @@ export default function Projects() {
 					/>
 				</ScrollContainer>
 			</div>
-		</section>
+		</motion.section>
 	);
 }

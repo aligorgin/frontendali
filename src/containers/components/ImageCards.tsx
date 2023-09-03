@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -22,7 +24,7 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 	return (
 		<>
 			<div className="mb-[3rem]">
-				<div className="flex h-full min-w-[19rem] flex-col rounded-md shadow-md sm:h-[19rem] sm:min-w-[30.938rem]">
+				<div className="flex h-full min-w-[19rem] flex-col rounded-md shadow-lg dark:shadow-white/20 sm:h-[19rem] sm:min-w-[30.938rem]">
 					<div>
 						<a href={websiteSrc} target={'_blank'} rel="noreferrer">
 							<div
@@ -36,23 +38,23 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 								<Image
 									src={`${imageSrc}`}
 									fill
-									sizes="100vw"
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 									className="rounded-tl-md rounded-tr-md object-cover"
 									alt={alt}
 									priority
 									onLoad={handleImageLoad}
 								/>
 								<div className="absolute left-0 top-0 h-full w-full rounded-tl-md rounded-tr-md bg-transparent transition  hover:backdrop-blur-0 md:hover:bg-black/60 md:hover:backdrop-blur-sm">
-									<div className="flex h-full items-center justify-center underline">
+									<div className="flex h-full items-center justify-center ">
 										{hover && (
 											<>
-												<div className="hidden pr-2 sm:flex">
+												<div className="hidden pr-2 text-white sm:flex">
 													View Website
 												</div>
 												<ArrowTopRightOnSquareIcon
 													width={16}
 													height={16}
-													className="hidden sm:flex"
+													className="hidden text-white sm:flex"
 												/>
 											</>
 										)}

@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import clsx from 'clsx';
 import { ModelContext } from '../../providers/ModalContext';
@@ -24,22 +26,22 @@ export default function PopUp() {
 			/>
 			<div
 				className={clsx(
-					isOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0',
-					'z-[999] w-11/12 rounded-lg bg-zinc-200 transition-all duration-200 dark:bg-zinc-900 sm:w-[375px]'
+					isOpen ? 'scale-100 opacity-100' : 'scale-110 opacity-0',
+					'z-[999] w-11/12 rounded-lg bg-zinc-200 transition-all duration-300 ease-out dark:bg-zinc-900 sm:w-[375px]'
 				)}
 			>
 				<div className="p-4">
 					{/*intro*/}
 					<div className="flex justify-between">
 						<p className="flex cursor-default items-center justify-center text-lg opacity-80 ">
-							It&lsquo;s easy to find me :
+							Reach me at:
 						</p>
-						<div className="grid h-8 w-8 cursor-pointer place-items-center rounded-md transition hover:bg-zinc-300 hover:dark:bg-zinc-600">
+						<div className="dark: grid h-8 w-8 cursor-pointer place-items-center  rounded-md transition sm:bg-none sm:hover:bg-zinc-300 sm:hover:dark:bg-zinc-600">
 							<XMarkIcon
 								onClick={() => {
 									setOpen(false);
 								}}
-								className="h-6 w-6"
+								className="w-6"
 							/>
 						</div>
 					</div>

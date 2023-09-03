@@ -1,135 +1,88 @@
-import { useTheme } from 'next-themes';
-import { useContext, useEffect, useState } from 'react';
-import { ChatBubbleLeftRightIcon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/solid';
+'use client';
+
+import { useContext, useState } from 'react';
 import clsx from 'clsx';
-import { motion, AnimatePresence } from 'framer-motion';
-import { BsLinkedin } from 'react-icons/bs';
-import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai';
 import { ModelContext } from '../providers/ModalContext';
+import BurgerMenu from './components/BurgerMenu';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import NavSocialDesktopIcons from './components/NavSocialDesktopIcons';
+import BurgerMenuChildren from './components/BurgerMenuChildren';
+import { motion } from 'framer-motion';
+import LogoSvg from './components/IconSvg';
 
-export default function Nav() {
+export default function Nav({ children }: { children?: React.ReactNode }) {
 	const { isOpen } = useContext(ModelContext);
-	const [mounted, setMounted] = useState<boolean>(false);
-	const { systemTheme, theme, setTheme } = useTheme();
-	const [clicked, setClicked] = useState<boolean | null>(true);
-
-	const navIconClasses =
-		'rounded-lg w-8 h-8 flex justify-center items-center hover:ring-2 hover:ring-zinc-900 dark:hover:ring-zinc-200 transition-shadow';
-	const linksIconsHover = 'transition-all hover:translate-y-[2px] active:translate-y-0';
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
-	const renderThemeToggle = () => {
-		if (!mounted) return null;
-		const currentTheme = theme === 'system' ? systemTheme : theme;
-		if (currentTheme === 'dark') {
-			return (
-				<button
-					className={clsx('bg-zinc-600 ', navIconClasses)}
-					onClick={() => setTheme('light')}
-				>
-					<SunIcon className="h-5 w-5 " />
-				</button>
-			);
+	const pathname = usePathname();
+	const navLinks = [
+		{
+			name: 'Home',
+			path: '/'
+		},
+		{
+			name: 'Goodies',
+			path: '/goodies'
 		}
-		return (
-			<button
-				className={clsx('bg-zinc-300', navIconClasses)}
-				onClick={() => setTheme('dark')}
-			>
-				<MoonIcon className="h-5 w-5 " />
-			</button>
-		);
-	};
+	];
 
 	return (
-		<div
-			className={clsx(
-				'fixed left-0 right-0 top-0 w-full bg-zinc-200 shadow-md transition duration-200 dark:bg-zinc-900 sm:relative sm:mt-4 sm:border-none sm:bg-none sm:shadow-none',
-				isOpen ? 'z-0' : 'z-10'
-			)}
-		>
-			<div className="mx-4 my-2 flex items-center justify-between sm:mx-0 sm:mt-2">
-				{/*left nav*/}
-				<button
-					className={clsx(navIconClasses, 'overflow-hidden bg-zinc-300 dark:bg-zinc-600')}
-					onClick={() => setClicked(!clicked)}
-				>
-					{/*close and unclose*/}
-					<motion.div
-						animate={clicked ? { x: 0, opacity: 1 } : { x: 13, opacity: 0 }}
-						transition={{ ease: 'easeOut', duration: 0.2 }}
-					>
-						<ChatBubbleLeftRightIcon className="h-5 w-5 translate-x-1/2" />
-					</motion.div>
-					<motion.div
-						animate={clicked ? { x: -13, opacity: 0 } : { x: 0, opacity: 1 }}
-						transition={{ ease: 'easeOut', duration: 0.2 }}
-					>
-						<XMarkIcon className="h-5 w-5 -translate-x-1/2" />
-					</motion.div>
-				</button>
-				{/*links*/}
-				<div className="flex flex-1 space-x-2">
-					<AnimatePresence>
-						{!clicked && (
-							<>
-								<motion.div
-									initial={{ x: 0, opacity: 0 }}
-									animate={{ x: 15, opacity: 1 }}
-									exit={{ x: 0, opacity: 0 }}
-									transition={{ ease: 'easeOut', duration: 0.1 }}
-								>
-									<a
+		<div>
+			<div
+				className={clsx(
+					'sticky top-0 w-full border-b-[.5px] border-black/20 bg-white/80 backdrop-blur-sm transition duration-200 dark:border-white/20 dark:bg-black/80',
+					isOpen ? 'z-0' : 'z-10'
+				)}
+			>
+				<div className="mx-auto max-w-2xl">
+					<div className="flex h-[52px] items-center justify-between px-4 md:px-0">
+						{/* nav elements */}
+						<div className="hidden space-x-8 sm:flex">
+							{navLinks.map((link, index) => {
+								const isActive = pathname === link.path;
+								return (
+									<Link
+										key={index}
+										href={link.path}
 										className={clsx(
-											'transition-all hover:translate-y-[2px] active:translate-y-0'
+											isActive
+												? 'text-red-600 dark:text-blue-500'
+												: 'text-black/60 transition hover:text-black dark:text-white/60 dark:hover:text-white',
+											'relative'
 										)}
-										target={'_blank'}
-										href="https://www.github.com/aligorgin"
-										rel="noreferrer"
 									>
-										<AiFillGithub className="h-6 w-6 " />
-									</a>
-								</motion.div>
-								<motion.div
-									initial={{ x: 0, opacity: 0 }}
-									animate={{ x: 15, opacity: 1 }}
-									exit={{ x: 0, opacity: 0 }}
-									transition={{ ease: 'easeOut', duration: 0.2 }}
-								>
-									<a
-										className={clsx(linksIconsHover)}
-										target={'_blank'}
-										href="https://www.instagram.com/frontendalii/"
-										rel="noreferrer"
-									>
-										<AiOutlineInstagram className="h-6 w-6 " />
-									</a>
-								</motion.div>
-								<motion.div
-									initial={{ x: 0, opacity: 0 }}
-									animate={{ x: 15, opacity: 1 }}
-									exit={{ x: 0, opacity: 0 }}
-									transition={{ ease: 'easeOut', duration: 0.3 }}
-								>
-									<a
-										className={clsx(linksIconsHover)}
-										target={'_blank'}
-										href="https://www.linkedin.com/in/ali-gorgin-562b71199"
-										rel="noreferrer"
-									>
-										<BsLinkedin className="h-6 w-6 " />
-									</a>
-								</motion.div>
-							</>
-						)}
-					</AnimatePresence>
-				</div>
+										{isActive && (
+											<motion.div
+												layoutId="border"
+												className="absolute bottom-[-14px] z-10 h-[1px] w-full bg-red-500 dark:bg-blue-500"
+												transition={{
+													type: 'spring',
+													bounce: 0.2,
+													duration: 0.5
+												}}
+											/>
+										)}
+										{link.name}
+									</Link>
+								);
+							})}
+						</div>
+						<div>
+							<Link
+								className="relative sm:hidden"
+								href={'/'}
+							>
+								<LogoSvg />
+							</Link>
+						</div>
 
-				{/*right nav*/}
-				<div>{renderThemeToggle()}</div>
+						<NavSocialDesktopIcons />
+					</div>
+				</div>
 			</div>
+			<BurgerMenu>
+				<BurgerMenuChildren />
+			</BurgerMenu>
+			{children}
 		</div>
 	);
 }
