@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Props {
 	children?: React.ReactNode;
@@ -22,6 +22,15 @@ export default function BurgerMenu({ children }: Props) {
 			path: '/goodies'
 		}
 	];
+
+	// todo : fix this
+	useEffect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+	}, [isMenuOpen]);
 
 	function toggleMenu() {
 		setIsMenuOpen(!isMenuOpen);

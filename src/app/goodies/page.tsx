@@ -18,6 +18,12 @@ export default function Page() {
 					alt="fliping Card"
 					name="Fliping Card"
 				/>
+				<Goodies
+					href="/animated-items"
+					src="/AnimatedItems.png"
+					alt="Animated Items"
+					name="Animated ITems"
+				/>
 			</div>
 		</motion.div>
 	);

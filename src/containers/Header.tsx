@@ -11,10 +11,16 @@ import { motion } from 'framer-motion';
 
 export default function Header() {
 	const [index, setIndex] = useState(0);
-	const { setOpen } = useContext(ModelContext);
+	const { setOpen, isOpen } = useContext(ModelContext);
 	const text = useDelayedText("ello, I'm Ali", 500);
 
+	// this interference with nav hambur menu!
 	useEffect(() => {
+		// if (isOpen) {
+		// 	document.body.style.overflow = 'hidden';
+		// } else {
+		// 	document.body.style.overflow = 'auto';
+		// }
 		const timeOut = setTimeout(() => {
 			let next = index + 1;
 			if (next === 3) {
@@ -26,7 +32,7 @@ export default function Header() {
 		return () => {
 			clearTimeout(timeOut);
 		};
-	}, [index]);
+	}, [index, isOpen]);
 
 	return (
 		<motion.header

@@ -24,7 +24,7 @@ export default function Goodies({ src, alt, name, href }: Props) {
 				src={`${src}`}
 				fill
 				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-				className="rounded-md"
+				className="rounded-md object-cover"
 				alt={alt}
 				priority
 				onLoad={handleImageLoad}
