@@ -67,14 +67,14 @@ export default function Header() {
 						in Tehran. I like to implement beautiful and functional details that allow
 						users to enjoy working with the application.
 					</div>
-					<div className="absolute right-1/2 top-1/3 -z-50 h-[500px] w-[100px] bg-gradient-to-tr from-red-400 to-rose-400 blur-[200px] dark:from-blue-400/60 dark:to-cyan-400/60 sm:hidden" />
+					<div className="absolute right-1/2 top-1/3 -z-50 h-[500px] w-[100px] bg-gradient-to-tr from-red-400/50 to-rose-400/50 blur-[200px] dark:from-blue-400/60 dark:to-cyan-400/60 sm:hidden" />
 					<div className="absolute left-1/2 top-1/3 -z-50 h-[500px] w-[100px] bg-gradient-to-tr  blur-[200px] dark:from-blue-400/60 dark:to-cyan-400/60 sm:hidden" />
 				</div>
-				<div className="relative mb-4 ml-0 h-[213px] w-[213px] flex-shrink-0 sm:mb-0 sm:ml-16 sm:h-[146px] sm:w-[146px]">
+				<div className="relative mb-10 ml-0 h-[213px] w-[213px] flex-shrink-0 sm:mb-0 sm:ml-16 sm:h-[146px] sm:w-[146px]">
 					<Image
 						src={'/avatar.jpg'}
 						fill
-						className="rounded-xl object-cover"
+						className="rounded-lg object-cover shadow-2xl shadow-black/40 brightness-110 dark:shadow-slate-500/20 "
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt={'Ali Gorgin'}
 						priority
@@ -84,7 +84,7 @@ export default function Header() {
 			<div className="flex flex-col items-center justify-center pt-8 sm:flex-row sm:justify-start">
 				<button
 					className={clsx(
-						'flex h-[48px] w-[280px] items-center justify-center rounded-md text-white shadow-lg transition-all duration-200 active:scale-95 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0',
+						'flex h-[48px] w-[280px] items-center justify-center rounded-md text-white shadow-xl shadow-black/20 transition-all duration-200 active:scale-95 dark:shadow-white/10 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0',
 						'bg-gradient-to-t from-red-600 to-red-400 dark:bg-gradient-to-t dark:from-blue-600 dark:to-blue-400'
 					)}
 					onClick={() => setOpen(true)}

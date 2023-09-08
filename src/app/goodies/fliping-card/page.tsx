@@ -1,12 +1,12 @@
 export default function page() {
 	return (
-		<div className="flex h-screen items-center justify-center bg-black">
+		<div style={{ height: 'calc(100vh - 70px)' }} className="flex items-center justify-center">
 			<div className="group h-96 w-[348px] [perspective:1000px]">
 				<div className="relative rounded-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 					{/* front side  */}
 					<div className="absolute inset-0 w-full [backface-visibility:hidden]">
-						<div className="rounded-md border-[0.5px] border-gray-300 shadow-lg shadow-white/50">
-							<div className="flex h-[180px] w-full items-center justify-center rounded-tl-md rounded-tr-md bg-gray-300">
+						<div className="rounded-md border-[0.5px] border-gray-300 shadow-lg dark:shadow-white/50">
+							<div className="flex h-[180px] w-full items-center justify-center rounded-tl-md rounded-tr-md bg-gray-300 text-black">
 								348*180
 							</div>
 							<div className="flex flex-col space-y-2 rounded-bl-md rounded-br-md bg-white p-4 text-black">
@@ -23,7 +23,7 @@ export default function page() {
 					</div>
 
 					{/* back side  */}
-					<div className="absolute inset-0 w-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
+					<div className="absolute inset-0 w-full shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] dark:shadow-white/50">
 						<div className="flex min-h-full flex-col rounded-md border-[0.5px] border-gray-300 bg-white text-black shadow-lg shadow-white/50">
 							<div className="flex flex-col space-y-1 p-4">
 								<p className="text-lg font-semibold">Card Flip</p>
@@ -52,7 +52,7 @@ export default function page() {
 					</div>
 				</div>
 			</div>
-			<div className="fixed bottom-3 px-4 text-center text-white md:hidden">
+			<div className="fixed bottom-4 rounded-md bg-red-400 p-2 mx-4 text-center md:hidden">
 				<p>
 					To view the hover effect animation of the card, please check it out on a
 					desktop.

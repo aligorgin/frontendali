@@ -16,7 +16,10 @@ export default function AnimatedTabs() {
 	let [activeTab, setActiveTab] = useState(items[0].id);
 
 	return (
-		<div className="flex h-screen items-center justify-center space-x-4">
+		<div
+			style={{ height: 'calc(100vh - 70px)' }}
+			className="flex flex-col items-center justify-center space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+		>
 			{items.map((tab) => (
 				<button
 					key={tab.id}
@@ -25,8 +28,8 @@ export default function AnimatedTabs() {
 						WebkitTapHighlightColor: 'transparent'
 					}}
 					className={clsx(
-						activeTab === tab.id ? '' : 'hover:text-white/60',
-						'relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2'
+						activeTab === tab.id ? '' : 'hover:text-black/60 dark:hover:text-white/60',
+						'relative rounded-full px-3 py-1.5 font-medium outline-sky-400 transition focus-visible:outline-2'
 					)}
 				>
 					{activeTab === tab.id && (
