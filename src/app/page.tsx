@@ -13,7 +13,7 @@ interface MyObj {
 }
 
 export default function App() {
-	const [isOpen, setOpen] = useState<boolean>(false);
+	const [isOpen, setOpen] = useState(false);
 	const providerValue = useMemo<MyObj>(() => ({ isOpen, setOpen }), [isOpen, setOpen]);
 	
 

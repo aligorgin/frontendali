@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import clsx from 'clsx';
 import { ModelContext } from '../providers/ModalContext';
 import BurgerMenu from './components/BurgerMenu';
@@ -67,14 +67,10 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 							})}
 						</div>
 						<div>
-							<Link
-								className="relative sm:hidden"
-								href={'/'}
-							>
+							<Link className="relative sm:hidden" href={'/'}>
 								<LogoSvg />
 							</Link>
 						</div>
-
 						<NavSocialDesktopIcons />
 					</div>
 				</div>

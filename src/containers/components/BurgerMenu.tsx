@@ -23,7 +23,6 @@ export default function BurgerMenu({ children }: Props) {
 		}
 	];
 
-	// todo : fix this
 	useEffect(() => {
 		if (isMenuOpen) {
 			document.body.style.overflow = 'hidden';
