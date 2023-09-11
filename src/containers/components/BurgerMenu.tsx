@@ -88,7 +88,7 @@ export default function BurgerMenu({ children }: Props) {
 							);
 						})}
 					</div>
-					<div className="mb-36">{children}</div>
+					<div className="mb-28">{children}</div>
 				</div>
 			</div>
 		</div>
