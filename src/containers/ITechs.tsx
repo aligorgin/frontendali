@@ -26,7 +26,7 @@ export default function ITechs() {
 			<div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
 				{techNames.map((name, index) => (
 					<div
-						className="rounded border-[0.5px] border-red-400 px-4 py-2 transition hover:scale-105 dark:border-blue-400"
+						className="rounded border-[0.5px] border-dashed border-red-400 px-4 py-2 transition hover:scale-105 dark:border-blue-400"
 						key={index}
 					>
 						{name.name}

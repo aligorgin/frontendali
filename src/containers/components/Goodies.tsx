@@ -29,7 +29,7 @@ export default function Goodies({ src, alt, name, href }: Props) {
 				priority
 				onLoad={handleImageLoad}
 			/>
-			<div className="absolute  -bottom-1 w-full rounded-bl-md rounded-br-md bg-white/60 px-4 pb-2 pt-1 dark:bg-white/30 ">
+			<div className="absolute backdrop-blur-sm  -bottom-1 w-full rounded-bl-md rounded-br-md bg-white/60 px-4 pb-2 pt-1 dark:bg-white/30 ">
 				{name}
 			</div>
 		</Link>

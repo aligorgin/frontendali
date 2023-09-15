@@ -12,8 +12,8 @@ export default function page() {
 							<div className="flex flex-col space-y-2 rounded-bl-md rounded-br-md bg-white p-4 text-black">
 								<p className="text-lg font-semibold">Card Flip</p>
 								<p>
-									Some quick example text to build on the card title and make up
-									the bulk of the card&apos;s content.
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+									numquam eligendi, nihil eum quas
 								</p>
 								{/* <div className="w-fit rounded-md bg-blue-700 px-4 py-2 text-white">
 									Go somewhere
@@ -36,8 +36,8 @@ export default function page() {
 							</div>
 							<div className="flex flex-col space-y-2 p-4">
 								<p>
-									Some quick example text to build on the card title and make up
-									the bulk of the card&apos;s content.
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+									numquam eligendi, nihil eum quas
 								</p>
 								<div className="flex space-x-6">
 									<p className="cursor-pointer text-blue-700 hover:underline">
@@ -52,7 +52,7 @@ export default function page() {
 					</div>
 				</div>
 			</div>
-			<div className="fixed bottom-4 rounded-md bg-red-400 p-2 mx-4 text-center md:hidden">
+			<div className="fixed bottom-4 mx-4 rounded-md bg-red-400 p-2 text-center md:hidden">
 				<p>
 					To view the hover effect animation of the card, please check it out on a
 					desktop.

@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
@@ -37,7 +39,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 	return (
 		<div className="flex flex-col space-y-6">
 			<div className="flex items-center justify-center space-x-4">
-				{SLIDES.map((slide, index) => {
+				{SLIDES.map((_, index) => {
 					return (
 						<button
 							onClick={() => {
@@ -55,7 +57,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 					);
 				})}
 			</div>
-			<div className="flex items-center justify-center space-x-12">
+			<div className="grid place-items-center grid-cols-2 gap-8 pt-8 sm:grid-cols-4 sm:pt-0">
 				<button
 					onClick={() => {
 						setIndex((curIndex: number) => {
@@ -104,7 +106,7 @@ const Slide = ({ slideNumber }: { slideNumber: number }) => {
 		<motion.div
 			animate={{ x: 0 }}
 			transition={{ ease: 'easeOut', duration: 2 }}
-			className="relative h-[200px] w-[500px]"
+			className="relative h-[200px] w-full sm:w-[500px]"
 		>
 			<Image alt="image" src={SLIDES[slideNumber]} fill className="rounded-md object-cover" />
 		</motion.div>
@@ -114,7 +116,10 @@ const Slide = ({ slideNumber }: { slideNumber: number }) => {
 export default function Slides() {
 	const [index, setIndex] = useState(0);
 	return (
-		<div className="flex flex-col space-y-8 overflow-hidden">
+		<div
+			style={{ height: 'calc(100vh - 70px)' }}
+			className="flex flex-col items-center justify-center space-y-8 overflow-hidden px-4"
+		>
 			<Slide slideNumber={index} />
 			<Controls setIndex={setIndex} slideIndex={index} />
 		</div>
