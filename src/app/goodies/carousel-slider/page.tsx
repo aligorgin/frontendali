@@ -13,11 +13,18 @@ import {
 
 const TIMEOUT = 1000;
 
+// const SLIDES = [
+// 	'https://picsum.photos/id/34/200/300',
+// 	'https://picsum.photos/id/35/200/300',
+// 	'https://picsum.photos/id/36/200/300',
+// 	'https://picsum.photos/id/37/200/300'
+// ];
+
 const SLIDES = [
-	'https://picsum.photos/id/34/200/300',
-	'https://picsum.photos/id/35/200/300',
-	'https://picsum.photos/id/36/200/300',
-	'https://picsum.photos/id/37/200/300'
+	'https://i.dummyjson.com/data/products/5/2.jpg',
+	'https://i.dummyjson.com/data/products/6/2.jpg',
+	'https://i.dummyjson.com/data/products/7/2.jpg',
+	'https://i.dummyjson.com/data/products/8/2.jpg'
 ];
 
 // when index  0  ----- > 1
@@ -57,7 +64,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 					);
 				})}
 			</div>
-			<div className="grid place-items-center grid-cols-2 gap-8 pt-8 sm:grid-cols-4 sm:pt-0">
+			<div className="grid grid-cols-2 place-items-center gap-8 pt-8 sm:grid-cols-4 sm:pt-0">
 				<button
 					onClick={() => {
 						setIndex((curIndex: number) => {
@@ -67,7 +74,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
-					<ArrowSmallLeftIcon className="w-6" />
+					<ArrowSmallLeftIcon className="w-6 text-white" />
 				</button>
 				<button
 					onClick={() => {
@@ -75,7 +82,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
-					<ArrowSmallRightIcon className="w-6" />
+					<ArrowSmallRightIcon className="w-6 text-white" />
 				</button>
 				<button
 					onClick={() => {
@@ -86,7 +93,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
-					<PlayIcon className="w-6" />
+					<PlayIcon className="w-6 text-white" />
 				</button>
 				<button
 					onClick={() => {
@@ -94,7 +101,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
-					<StopIcon className="w-6" />
+					<StopIcon className="w-6 text-white" />
 				</button>
 			</div>
 		</div>
@@ -102,13 +109,25 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 };
 
 const Slide = ({ slideNumber }: { slideNumber: number }) => {
+	const [loaded, setLoaded] = useState(true);
+
+	const handleImageLoad = () => {
+		setLoaded(false);
+	};
 	return (
 		<motion.div
 			animate={{ x: 0 }}
 			transition={{ ease: 'easeOut', duration: 2 }}
 			className="relative h-[200px] w-full sm:w-[500px]"
 		>
-			<Image alt="image" src={SLIDES[slideNumber]} fill className="rounded-md object-cover" />
+			{loaded && <div className="shimmer h-full w-full" />}
+			<Image
+				alt="image"
+				src={SLIDES[slideNumber]}
+				fill
+				onLoad={handleImageLoad}
+				className="rounded-md object-cover"
+			/>
 		</motion.div>
 	);
 };
