@@ -11,14 +11,14 @@ export default function ThemeToggle() {
 		setMounted(true);
 	}, []);
 
-	if (!mounted) return <div className="w-7 rounded-md bg-gray-300 p-3 dark:bg-gray-600"></div>;
+	if (!mounted) return <div className="w-7 rounded-md bg-zinc-300 p-3 dark:bg-zinc-600"></div>;
 
 	const currentTheme = theme === 'system' ? systemTheme : theme;
 	return (
 		<AnimatePresence>
 			{currentTheme === 'dark' ? (
 				<button
-					className="flex rounded-md  bg-gray-600 p-1 ring-gray-200 hover:ring-1"
+					className="flex rounded-md  bg-zinc-600 p-1 ring-zinc-200 hover:ring-1"
 					onClick={() => setTheme('light')}
 				>
 					<motion.div
@@ -35,7 +35,7 @@ export default function ThemeToggle() {
 				</button>
 			) : (
 				<button
-					className="flex rounded-md  bg-gray-300 p-1 ring-gray-800 hover:ring-1"
+					className="flex rounded-md  bg-zinc-300 p-1 ring-zinc-800 hover:ring-1"
 					onClick={() => setTheme('dark')}
 				>
 					<motion.div

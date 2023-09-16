@@ -63,7 +63,7 @@ export default function NavSocialDesktopIcons() {
 				{/*close and unclose*/}
 				<AnimatePresence>
 					{clicked ? (
-						<motion.div className="rounded-md bg-gray-300 p-1 ring-gray-800 hover:ring-1 dark:bg-gray-600 dark:ring-gray-200">
+						<motion.div className="rounded-md bg-zinc-300 p-1 ring-zinc-800 hover:ring-1 dark:bg-zinc-600 dark:ring-zinc-200">
 							<motion.div
 								initial={{ x: 10, opacity: 0 }}
 								animate={{ x: 0, opacity: 1 }}
@@ -78,7 +78,7 @@ export default function NavSocialDesktopIcons() {
 						</motion.div>
 					) : (
 						<AnimatePresence>
-							<motion.div className="rounded-md bg-gray-300 p-1 ring-gray-800 hover:ring-1 dark:bg-gray-600 dark:ring-gray-200">
+							<motion.div className="rounded-md bg-zinc-300 p-1 ring-zinc-800 hover:ring-1 dark:bg-zinc-600 dark:ring-zinc-200">
 								<motion.div
 									initial={{ x: -10, opacity: 0 }}
 									animate={{ x: 0, opacity: 1 }}

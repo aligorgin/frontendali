@@ -67,7 +67,7 @@ export default function ImageCard({ desc, imageSrc, iconSrc, alt, websiteSrc, na
 							</div>
 						</a>
 					</div>
-					<div className="flex h-full items-center justify-between rounded-bl-md rounded-br-md px-2 py-2 text-sm transition duration-200 dark:bg-zinc-700 sm:px-4">
+					<div className="flex h-full items-center justify-between rounded-bl-md rounded-br-md bg-zinc-300 px-2 py-2 text-sm transition duration-200 dark:bg-zinc-700 sm:px-4">
 						<div>{desc}</div>
 						<div className="cursor-pointer transition hover:-translate-y-1 hover:brightness-125 active:-translate-y-0.5 ">
 							<a href={iconSrc} target={'_blank'} rel={'noreferrer'}>
