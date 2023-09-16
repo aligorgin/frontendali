@@ -20,12 +20,14 @@ const TIMEOUT = 1000;
 // 	'https://picsum.photos/id/37/200/300'
 // ];
 
-const SLIDES = [
-	'https://i.dummyjson.com/data/products/5/2.jpg',
-	'https://i.dummyjson.com/data/products/6/2.jpg',
-	'https://i.dummyjson.com/data/products/7/2.jpg',
-	'https://i.dummyjson.com/data/products/8/2.jpg'
-];
+// const SLIDES = [
+// 	'https://i.dummyjson.com/data/products/5/2.jpg',
+// 	'https://i.dummyjson.com/data/products/6/2.jpg',
+// 	'https://i.dummyjson.com/data/products/7/2.jpg',
+// 	'https://i.dummyjson.com/data/products/8/2.jpg'
+// ];
+
+const SLIDES = ['/slide-1.jpg', '/slide-2.jpg', '/slide-3.jpg', '/slide-4.jpg'];
 
 // when index  0  ----- > 1
 // when index  1  ----- > 2
@@ -109,6 +111,7 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: any; slideIndex: number 
 };
 
 const Slide = ({ slideNumber }: { slideNumber: number }) => {
+	console.log(SLIDES[slideNumber]);
 	const [loaded, setLoaded] = useState(true);
 
 	const handleImageLoad = () => {
@@ -125,6 +128,7 @@ const Slide = ({ slideNumber }: { slideNumber: number }) => {
 				alt="image"
 				src={SLIDES[slideNumber]}
 				fill
+				priority
 				onLoad={handleImageLoad}
 				className="rounded-md object-cover"
 			/>
@@ -137,7 +141,7 @@ export default function Slides() {
 	return (
 		<div
 			style={{ height: 'calc(100vh - 70px)' }}
-			className="flex flex-col items-center justify-center space-y-8 overflow-hidden px-4"
+			className="flex flex-col items-center justify-center space-y-8 px-4"
 		>
 			<Slide slideNumber={index} />
 			<Controls setIndex={setIndex} slideIndex={index} />
