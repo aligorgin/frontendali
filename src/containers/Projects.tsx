@@ -64,7 +64,7 @@ export default function Projects() {
 			initial={{ x: -50, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
-			className="mx-auto max-w-2xl px-4 md:px-0"
+			className="mx-auto max-w-2xl px-2 md:px-0"
 		>
 			<h2 className="mt-8 text-4xl  font-semibold">Projects</h2>
 			<div className="relative mt-4 max-w-full ">

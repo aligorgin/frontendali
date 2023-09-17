@@ -45,7 +45,7 @@ export default function Header() {
 			initial={{ x: 0, y: -50, opacity: 0 }}
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
-			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
+			className="mx-auto mt-8 max-w-2xl px-2 md:px-0"
 		>
 			<div className="relative flex flex-col-reverse items-center justify-center sm:flex-row">
 				<div className="text-center sm:text-left">
@@ -92,7 +92,7 @@ export default function Header() {
 			<div className="flex flex-col items-center justify-center space-x-0 space-y-4 pt-8 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0">
 				<button
 					className={clsx(
-						'flex h-[48px] w-[270px] items-center justify-center rounded-md text-white shadow-lg shadow-black/20 transition-all duration-200 active:scale-95 active:shadow-sm dark:shadow-white/10 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0',
+						'flex h-[48px] w-[270px] items-center justify-center rounded-md text-white shadow-md shadow-black/20 transition-all duration-200 active:scale-95 active:shadow-sm dark:shadow-white/10 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0',
 						'bg-gradient-to-t from-red-600 to-red-400 dark:bg-gradient-to-t dark:from-blue-600 dark:to-blue-400'
 					)}
 					onClick={() => setOpen(true)}
@@ -105,7 +105,7 @@ export default function Header() {
 					target={'_blank'}
 					rel={'noreferrer'}
 					href="https://resume1.storage.iran.liara.space/Aligg.pdf"
-					className="flex h-[48px] w-[270px] items-center justify-center rounded-md border border-red-400 shadow-lg shadow-black/20 transition-all duration-200 active:scale-95 active:shadow-sm dark:border-blue-400 dark:shadow-white/10 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0 "
+					className="flex h-[48px] w-[270px] items-center justify-center rounded-md border border-red-400 shadow-md shadow-black/20 transition-all duration-200 active:scale-95 active:shadow-sm dark:border-blue-400 dark:shadow-white/10 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0 "
 				>
 					<span className="flex items-center justify-center space-x-1">
 						<ArrowDownOnSquareIcon className="w-5 " />

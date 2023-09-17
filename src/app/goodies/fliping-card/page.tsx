@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import FlipingCard from './FlipingCard';
 
 export const metadata: Metadata = {
-	title: 'Animated Tabs'
+	title: 'Fliping Card'
 };
 
 export default function Page() {

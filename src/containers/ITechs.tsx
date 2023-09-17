@@ -20,7 +20,7 @@ export default function ITechs() {
 			initial={{ x: 50, y: 0, opacity: 0 }}
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
-			className="mx-auto mt-8 max-w-2xl px-4 md:px-0"
+			className="mx-auto mt-8 max-w-2xl px-2 md:px-0"
 		>
 			<p>Here are a few technologies I&apos;ve been working with recently:</p>
 			<div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">

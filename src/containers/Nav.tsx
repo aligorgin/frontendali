@@ -34,7 +34,7 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 				)}
 			>
 				<div className="mx-auto max-w-2xl">
-					<div className="flex h-[52px] items-center justify-between px-4 md:px-0">
+					<div className="flex h-[52px] items-center justify-between px-2 md:px-0">
 						{/* nav elements */}
 						<div className="hidden space-x-8 sm:flex">
 							{navLinks.map((link, index) => {
