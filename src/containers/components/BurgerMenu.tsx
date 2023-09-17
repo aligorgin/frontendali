@@ -67,7 +67,8 @@ export default function BurgerMenu({ children }: Props) {
 				)}
 			>
 				<div className="mb-6 mt-2 h-[0.5px] w-full bg-black/20 dark:bg-white/20" />
-				<div className="flex h-screen flex-col justify-between px-4 ">
+				{/* todo : change the px */}
+				<div className="flex h-screen flex-col justify-between px-2 ">
 					<div className="flex flex-col">
 						{navItems.map((item, index) => {
 							const isActive = pathname === item.path;
