@@ -24,7 +24,6 @@ import {
 	PlayIcon,
 	StopIcon
 } from '@heroicons/react/24/solid';
-import { motion } from 'framer-motion';
 
 const TIMEOUT = 1000;
 const SLIDES = ['/slide-1.jpg', '/slide-2.jpg', '/slide-3.jpg', '/slide-4.jpg'];
@@ -269,42 +268,65 @@ export default function Slides() {
 	}, [copy]);
 
 	return (
-		<div className="mt-12 px-2 md:px-0">
-			<div className="text-center text-4xl font-bold md:text-left">Carousel Slider</div>
-			<div className="mt-16 flex flex-col items-center justify-center space-y-8 rounded-md border border-zinc-300 px-2 py-20 dark:border-zinc-600 ">
-				<Slide slideNumber={index} />
-				<Controls setIndex={setIndex} slideIndex={index} />
-			</div>
-			<div className="mt-16">
-				<div className="mb-8 text-2xl font-bold">Code</div>
-				<div className="relative">
-					<button className="absolute right-2 top-2">
-						{copy ? (
-							<CheckIcon
-								onClick={() => {
-									setCopy(true);
-								}}
-								className="w-8 rounded-md border-[0.5px] border-green-400 bg-zinc-600 p-1 text-green-400"
-							/>
-						) : (
-							<DocumentDuplicateIcon
-								onClick={() => {
-									setCopy(true);
-									navigator.clipboard.writeText(codeString);
-								}}
-								className="w-8 rounded-md border-[0.5px] border-zinc-700 bg-zinc-600 p-1 text-white"
-							/>
-						)}
-					</button>
-					<SyntaxHighlighter
-						language="javascript"
-						style={atomOneDark}
-						customStyle={{ padding: '16px', borderRadius: '6px' }}
-					>
-						{codeString}
-					</SyntaxHighlighter>
+		<motion.div
+			initial={{ x: 200, y: 0, opacity: 0 }}
+			animate={{ x: 0, y: 0, opacity: 1 }}
+			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
+		>
+			<div className="mt-12 px-2 md:px-0">
+				<div className="text-center text-4xl font-bold md:text-left">Carousel Slider</div>
+				<div className="mt-16 flex flex-col items-center justify-center space-y-8 rounded-md border border-zinc-300 px-2 py-20 dark:border-zinc-600 ">
+					<Slide slideNumber={index} />
+					<Controls setIndex={setIndex} slideIndex={index} />
+				</div>
+				<div className="mt-16">
+					<div className="pb-4 text-2xl font-bold">Library used</div>
+					<ul className="flex list-disc flex-col space-y-2 pl-12 text-lg">
+						<LibraryUsed name="clsx(2.0.0)" href="https://github.com/lukeed/clsx" />
+						<LibraryUsed name="Tailwind CSS(3.3.3)" href="https://tailwindcss.com/" />
+					</ul>
+				</div>
+				<div className="mt-16">
+					<div className="mb-4 text-2xl font-bold">Code</div>
+					<div className="relative">
+						<button className="absolute right-2 top-2">
+							{copy ? (
+								<CheckIcon
+									onClick={() => {
+										setCopy(true);
+									}}
+									className="w-8 rounded-md border-[0.5px] border-green-400 bg-zinc-600 p-1 text-green-400"
+								/>
+							) : (
+								<DocumentDuplicateIcon
+									onClick={() => {
+										setCopy(true);
+										navigator.clipboard.writeText(codeString);
+									}}
+									className="w-8 rounded-md border-[0.5px] border-zinc-700 bg-zinc-600 p-1 text-white"
+								/>
+							)}
+						</button>
+						<SyntaxHighlighter
+							language="javascript"
+							style={atomOneDark}
+							customStyle={{ padding: '16px', borderRadius: '6px' }}
+						>
+							{codeString}
+						</SyntaxHighlighter>
+					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
+
+const LibraryUsed = ({ name, href }: { name: string; href: string }) => {
+	return (
+		<li>
+			<a rel="noreferrer" target="_blank" href={href} className="underline hover:opacity-80">
+				{name}
+			</a>
+		</li>
+	);
+};

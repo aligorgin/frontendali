@@ -42,9 +42,9 @@ export default function Header() {
 
 	return (
 		<motion.header
-			initial={{ x: 0, y: -50, opacity: 0 }}
+			initial={{ x: 0, y: -100, opacity: 0 }}
 			animate={{ x: 0, y: 0, opacity: 1 }}
-			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
+			transition={{ duration: 0.25 }}
 			className="mx-auto mt-8 max-w-2xl px-2 md:px-0"
 		>
 			<div className="relative flex flex-col-reverse items-center justify-center sm:flex-row">
