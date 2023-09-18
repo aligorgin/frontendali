@@ -70,7 +70,7 @@ export default function Header() {
 					</div>
 					<div className="pt-2 leading-relaxed sm:text-base sm:leading-6">
 						Greetings! I&lsquo;m Ali Gorgin, a self-taught Frontend Developer residing
-						in Tehran. I like to implement beautiful and functional details that allow
+						in Tehran. I like to implement modern and functional details that allow
 						users to enjoy working with the application.
 					</div>
 					<div className="absolute right-1/2 top-1/3 -z-50 h-[500px] w-[100px] bg-gradient-to-tr from-red-400/50 to-rose-400/50 blur-[200px] dark:from-blue-400/30 dark:to-cyan-400/30 sm:hidden" />
