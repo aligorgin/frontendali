@@ -16,7 +16,7 @@ export default function Goodies({ src, alt, name, href }: Props) {
 	};
 	return (
 		<Link
-			href={`/goodies/${href}`}
+			href={`/codes/${href}`}
 			className="relative h-[260px] w-full cursor-pointer overflow-hidden rounded-md border shadow-xl dark:border-white/30 dark:shadow-white/10"
 		>
 			{loaded && <div className="shimmer h-full w-full" />}
@@ -29,7 +29,7 @@ export default function Goodies({ src, alt, name, href }: Props) {
 				priority
 				onLoad={handleImageLoad}
 			/>
-			<div className="absolute backdrop-blur-sm  -bottom-1 w-full rounded-bl-md rounded-br-md bg-white/60 px-4 pb-2 pt-1 dark:bg-white/30 ">
+			<div className="absolute -bottom-1  w-full rounded-bl-md rounded-br-md bg-white/60 px-4 pb-2 pt-1 backdrop-blur-sm dark:bg-white/30 ">
 				{name}
 			</div>
 		</Link>

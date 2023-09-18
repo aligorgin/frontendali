@@ -18,8 +18,8 @@ export default function BurgerMenu({ children }: Props) {
 			path: '/'
 		},
 		{
-			name: 'Goodies',
-			path: '/goodies'
+			name: 'Codes',
+			path: '/codes'
 		}
 	];
 

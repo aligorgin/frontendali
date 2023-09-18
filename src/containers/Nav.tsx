@@ -20,8 +20,8 @@ export default function Nav({ children }: { children?: React.ReactNode }) {
 			path: '/'
 		},
 		{
-			name: 'Goodies',
-			path: '/goodies'
+			name: 'Codes',
+			path: '/codes'
 		}
 	];
 
