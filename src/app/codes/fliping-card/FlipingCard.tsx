@@ -95,7 +95,7 @@ export default function FlipingCard() {
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
 		>
-			<div className="mt-12 px-2 md:px-0">
+			<div className="mt-12 px-2 pb-16 md:px-0">
 				<div className="text-center text-4xl font-bold md:text-left">Fliping Card</div>
 				<div className="mt-16 flex items-center justify-center rounded-md border border-zinc-300  py-20 dark:border-zinc-600 ">
 					<div className="group h-96 w-[348px] [perspective:1000px]">
@@ -159,7 +159,7 @@ export default function FlipingCard() {
 				<div className="mt-16">
 					<div className="pb-4 text-2xl font-bold">Library used</div>
 					<ul className="flex list-disc flex-col space-y-2 pl-12 text-lg">
-						<LibraryUsed name="Tailwind CSS(3.3.3)" href="https://tailwindcss.com/"/>
+						<LibraryUsed name="Tailwind CSS(3.3.3)" href="https://tailwindcss.com/" />
 						<LibraryUsed name="Hero icons(2.0.18)" href="https://heroicons.com/" />
 					</ul>
 				</div>

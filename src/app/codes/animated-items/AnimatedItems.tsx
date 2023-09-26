@@ -82,7 +82,7 @@ export default function AnimatedTabs() {
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
 		>
-			<div className="mt-12 px-2 md:px-0">
+			<div className="mt-12 px-2 pb-16 md:px-0">
 				<div className="text-center text-4xl font-bold md:text-left">Animated Tabs</div>
 				<div className="mt-16 flex  flex-col items-center justify-center space-x-0 space-y-4 rounded-md border border-zinc-300 py-20 dark:border-zinc-600 sm:flex-row sm:space-x-4 sm:space-y-0">
 					{items.map((tab) => (

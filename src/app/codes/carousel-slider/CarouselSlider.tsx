@@ -312,7 +312,7 @@ export default function Slides() {
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
 		>
-			<div className="mt-12 px-2 md:px-0">
+			<div className="mt-12 px-2 pb-16 md:px-0">
 				<div className="text-center text-4xl font-bold md:text-left">Carousel Slider</div>
 				<div className="mt-16 flex flex-col items-center justify-center space-y-8 rounded-md border border-zinc-300 px-2 py-20 dark:border-zinc-600 ">
 					<Slide slideNumber={index} />

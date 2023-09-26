@@ -30,7 +30,7 @@ export default function Codes() {
 			initial={{ x: -200, y: 0, opacity: 0 }}
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
-			className="px-2 pt-8 md:px-0"
+			className="px-2 pt-8 md:px-0 pb-16"
 		>
 			<div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
 				{items.map((item, index) => {
