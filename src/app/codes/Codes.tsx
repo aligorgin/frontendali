@@ -8,8 +8,8 @@ export default function Codes() {
 		{
 			href: '/fliping-card',
 			src: '/flipingCard.png',
-			alt: 'fliping Card',
-			name: 'fliping Card'
+			alt: 'Fliping Card',
+			name: 'Fliping Card'
 		},
 		{
 			href: '/animated-items',
@@ -20,7 +20,7 @@ export default function Codes() {
 		{
 			href: '/carousel-slider',
 			src: '/slider.png',
-			alt: 'carousel slider',
+			alt: 'Carousel Slider',
 			name: 'Carousel Slider'
 		}
 	];
