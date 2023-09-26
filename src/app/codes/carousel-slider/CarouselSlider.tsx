@@ -26,9 +26,17 @@ import {
 } from '@heroicons/react/24/solid';
 
 const TIMEOUT = 1000;
+// random images 
 const SLIDES = ['/slide-1.jpg', '/slide-2.jpg', '/slide-3.jpg', '/slide-4.jpg'];
 
-const Controls = ({ setIndex, slideIndex }: { setIndex: Dispatch<SetStateAction<any>>; slideIndex: number }) => {
+const Controls = ({
+	setIndex,
+	slideIndex
+}: {
+	setIndex: Dispatch<SetStateAction<any>>;
+	slideIndex: number;
+}) => {
+	const [isPlay, setIsPlay] = useState(false);
 	const interval = useRef<any>();
 
 	const increament = () => {
@@ -60,44 +68,57 @@ const Controls = ({ setIndex, slideIndex }: { setIndex: Dispatch<SetStateAction<
 					);
 				})}
 			</div>
-			<div className="grid grid-cols-2 place-items-center gap-8 pt-8 sm:grid-cols-4 sm:pt-0">
+			<div className="flex items-center justify-center space-x-4 pt-8 sm:space-x-8 sm:pt-0">
 				<button
 					onClick={() => {
 						setIndex((curIndex: number) => {
 							const newIndex = curIndex - 1;
 							return newIndex < 0 ? SLIDES.length - 1 : newIndex;
 						});
+						if (interval.current) {
+							clearInterval(interval.current);
+							setIsPlay(false);
+						}
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
 					<ArrowSmallLeftIcon className="w-6 text-white" />
 				</button>
+				{isPlay ? (
+					<button
+						onClick={() => {
+							setIsPlay(!isPlay);
+							clearInterval(interval.current);
+						}}
+						className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
+					>
+						<StopIcon className="w-6 text-white" />
+					</button>
+				) : (
+					<button
+						onClick={() => {
+							setIsPlay(!isPlay);
+							if (interval.current) {
+								clearInterval(interval.current);
+							}
+							interval.current = setInterval(increament, TIMEOUT);
+						}}
+						className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
+					>
+						<PlayIcon className="w-6 text-white" />
+					</button>
+				)}
 				<button
 					onClick={() => {
 						increament();
+						if (interval.current) {
+							clearInterval(interval.current);
+							setIsPlay(false);
+						}
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
 					<ArrowSmallRightIcon className="w-6 text-white" />
-				</button>
-				<button
-					onClick={() => {
-						if (interval.current) {
-							clearInterval(interval.current);
-						}
-						interval.current = setInterval(increament, TIMEOUT);
-					}}
-					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
-				>
-					<PlayIcon className="w-6 text-white" />
-				</button>
-				<button
-					onClick={() => {
-						clearInterval(interval.current);
-					}}
-					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
-				>
-					<StopIcon className="w-6 text-white" />
 				</button>
 			</div>
 		</div>
@@ -116,7 +137,7 @@ const Slide = ({ slideNumber }: { slideNumber: number }) => {
 			transition={{ ease: 'easeOut', duration: 2 }}
 			className="relative h-[200px] w-full sm:w-[500px]"
 		>
-			{loaded && <div className="h-full w-full bg-zinc-300 dark:bg-zinc-600" />}
+			{loaded && <div className="shimmer h-full w-full" />}
 			<Image
 				alt="image"
 				src={SLIDES[slideNumber]}
@@ -131,12 +152,15 @@ const Slide = ({ slideNumber }: { slideNumber: number }) => {
 
 export default function Slides() {
 	const [index, setIndex] = useState(0);
+
 	return (
-		<div className="mt-12">
-			<div className="text-center text-4xl font-bold">Carousel Slider</div>
-			<div className="mt-16 flex flex-col items-center justify-center space-y-8 px-4">
-				<Slide slideNumber={index} />
-				<Controls setIndex={setIndex} slideIndex={index} />
+		<div>
+			<div className="mt-12 px-2 md:px-0">
+				<div className="text-center text-4xl font-bold md:text-left">Carousel Slider</div>
+				<div className="mt-16 flex flex-col items-center justify-center space-y-8 rounded-md border border-zinc-300 px-2 py-20 dark:border-zinc-600 ">
+					<Slide slideNumber={index} />
+					<Controls setIndex={setIndex} slideIndex={index} />
+				</div>
 			</div>
 		</div>
 	);
@@ -144,6 +168,7 @@ export default function Slides() {
 `;
 
 const TIMEOUT = 1000;
+// randome images
 const SLIDES = ['/slide-1.jpg', '/slide-2.jpg', '/slide-3.jpg', '/slide-4.jpg'];
 
 const Controls = ({
@@ -153,6 +178,7 @@ const Controls = ({
 	setIndex: Dispatch<SetStateAction<any>>;
 	slideIndex: number;
 }) => {
+	const [isPlay, setIsPlay] = useState(false);
 	const interval = useRef<any>();
 
 	const increament = () => {
@@ -184,44 +210,57 @@ const Controls = ({
 					);
 				})}
 			</div>
-			<div className="grid grid-cols-2 place-items-center gap-8 pt-8 sm:grid-cols-4 sm:pt-0">
+			<div className="flex items-center justify-center space-x-4 pt-8 sm:space-x-8 sm:pt-0">
 				<button
 					onClick={() => {
 						setIndex((curIndex: number) => {
 							const newIndex = curIndex - 1;
 							return newIndex < 0 ? SLIDES.length - 1 : newIndex;
 						});
+						if (interval.current) {
+							clearInterval(interval.current);
+							setIsPlay(false);
+						}
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
 					<ArrowSmallLeftIcon className="w-6 text-white" />
 				</button>
+				{isPlay ? (
+					<button
+						onClick={() => {
+							setIsPlay(!isPlay);
+							clearInterval(interval.current);
+						}}
+						className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
+					>
+						<StopIcon className="w-6 text-white" />
+					</button>
+				) : (
+					<button
+						onClick={() => {
+							setIsPlay(!isPlay);
+							if (interval.current) {
+								clearInterval(interval.current);
+							}
+							interval.current = setInterval(increament, TIMEOUT);
+						}}
+						className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
+					>
+						<PlayIcon className="w-6 text-white" />
+					</button>
+				)}
 				<button
 					onClick={() => {
 						increament();
+						if (interval.current) {
+							clearInterval(interval.current);
+							setIsPlay(false);
+						}
 					}}
 					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
 				>
 					<ArrowSmallRightIcon className="w-6 text-white" />
-				</button>
-				<button
-					onClick={() => {
-						if (interval.current) {
-							clearInterval(interval.current);
-						}
-						interval.current = setInterval(increament, TIMEOUT);
-					}}
-					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
-				>
-					<PlayIcon className="w-6 text-white" />
-				</button>
-				<button
-					onClick={() => {
-						clearInterval(interval.current);
-					}}
-					className="rounded-md bg-blue-700 px-6 py-2 transition hover:scale-95 active:scale-105"
-				>
-					<StopIcon className="w-6 text-white" />
 				</button>
 			</div>
 		</div>
