@@ -17,7 +17,7 @@ export default function Goodies({ src, alt, name, href }: Props) {
 	return (
 		<Link
 			href={`/codes/${href}`}
-			className="relative h-[260px] w-full cursor-pointer overflow-hidden rounded-md border shadow-xl dark:border-white/30 dark:shadow-white/10"
+			className="relative h-[260px] w-full cursor-pointer overflow-hidden rounded-md border shadow-xl transition hover:scale-105 dark:border-white/30 dark:shadow-white/10"
 		>
 			{loaded && <div className="shimmer h-full w-full" />}
 			<Image

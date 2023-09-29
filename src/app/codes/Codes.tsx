@@ -13,7 +13,7 @@ export default function Codes() {
 		},
 		{
 			href: '/animated-items',
-			src: '/AnimatedItems.png',
+			src: '/animated-items.png',
 			alt: 'Animated Items',
 			name: 'Animated ITems'
 		},
@@ -22,6 +22,12 @@ export default function Codes() {
 			src: '/slider.png',
 			alt: 'Carousel Slider',
 			name: 'Carousel Slider'
+		},
+		{
+			href: '/animated-dots',
+			src: '/animated-dots.png',
+			alt: 'Animated Dots',
+			name: 'Animated Dots'
 		}
 	];
 
@@ -30,7 +36,7 @@ export default function Codes() {
 			initial={{ x: -200, y: 0, opacity: 0 }}
 			animate={{ x: 0, y: 0, opacity: 1 }}
 			transition={{ type: 'spring', duration: 0.5, bounce: 0.25, delay: 0 }}
-			className="px-2 pt-8 md:px-0 pb-16"
+			className="px-2 pb-16 pt-8 md:px-0"
 		>
 			<div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
 				{items.map((item, index) => {
