@@ -9,7 +9,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 const codeString = `import { motion, useSpring } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
-const BIG_SIZE = 100;
+const BIG_SIZE = 70;
 const SMALL_SIZE = 15;
 const PER_PX = 0.3;
 
@@ -63,7 +63,7 @@ export default function AnimatedDots() {
 }
 `;
 
-const BIG_SIZE = 100;
+const BIG_SIZE = 70;
 const SMALL_SIZE = 15;
 const PER_PX = 0.3;
 
@@ -86,7 +86,7 @@ function Dot({ mousePos }: { mousePos: { x: number; y: number } }) {
 	return (
 		<div ref={dotRef} className="relative">
 			<motion.div
-				className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80"
+				className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full bg-black dark:bg-white/80"
 				style={{ width: size, height: size }}
 			/>
 		</div>
