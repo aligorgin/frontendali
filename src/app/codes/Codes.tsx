@@ -12,10 +12,10 @@ export default function Codes() {
 			name: 'Fliping Card'
 		},
 		{
-			href: '/animated-items',
-			src: '/animated-items.png',
-			alt: 'Animated Items',
-			name: 'Animated ITems'
+			href: '/animated-tabs',
+			src: '/animated-tabs.png',
+			alt: 'Animated Tabs',
+			name: 'Animated Tabs'
 		},
 		{
 			href: '/carousel-slider',

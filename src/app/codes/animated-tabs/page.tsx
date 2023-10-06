@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AnimatedTabs from './AnimatedItems';
+import AnimatedTabs from './AnimatedTabs';
 
 export const metadata: Metadata = {
 	title: 'Animated Tabs'

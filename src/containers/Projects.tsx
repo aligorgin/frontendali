@@ -53,7 +53,7 @@ export default function Projects() {
 
 	useEffect(() => {
 		setMounted(true);
-	}, []);
+	}, [mounted]);
 
 	if (!mounted) {
 		return null;
