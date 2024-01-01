@@ -81,7 +81,7 @@ export default function Header() {
 					<Image
 						src={'/avatar.jpg'}
 						fill
-						className="rounded-lg object-cover shadow-lg shadow-black/40 brightness-125 dark:shadow-2xl dark:shadow-slate-500/20 dark:brightness-105 "
+						className="rounded-lg object-cover shadow-md shadow-black/30 brightness-125 dark:shadow-2xl dark:shadow-slate-500/20 dark:brightness-105 "
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt={'Ali Gorgin'}
 						priority
