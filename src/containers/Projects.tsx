@@ -10,20 +10,20 @@ export default function Projects() {
 
 	const items = [
 		{
+			alt: 'Rick And morty',
+			desc: 'Rick and Morty API: Explore animated characters\' details.',
+			iconSrc: 'https://github.com/aligorgin/rick-morty',
+			imageSrc: '/rick-morty.png',
+			websiteSrc: 'https://rickandmorty.iran.liara.run/',
+			name: 'Rick And Morty'
+		},
+		{
 			alt: 'Math spirit game',
 			desc: 'Math Spirit: Boost math skills with playful gaming.',
 			iconSrc: 'https://github.com/aligorgin/MathSprintGame',
 			imageSrc: '/math-spirit.png',
 			websiteSrc: 'https://aligorgin.github.io/MathSprintGame/',
 			name: 'Math Spirit'
-		},
-		{
-			alt: 'Weather Forecast',
-			desc: 'Weather App: Stay informed about the forecast. ',
-			iconSrc: 'https://github.com/aligorgin/weatherS',
-			imageSrc: '/weather.png',
-			websiteSrc: 'https://weather-s3.vercel.app/',
-			name: 'Weather Forecast'
 		},
 		{
 			alt: 'Rock Paper Scissors game',

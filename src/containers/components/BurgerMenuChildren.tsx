@@ -8,7 +8,7 @@ import ThemeToggle from './ThemeToggle';
 export default function BurgerMenuChildren() {
 	const [clicked, setClicked] = useState(false);
 	return (
-		<div className="flex justify-between sm:hidden">
+		<div className="flex justify-between px-3 pb-4 sm:hidden">
 			<div className="flex items-center justify-center space-x-4 ">
 				<button className="flex pr-2" onClick={() => setClicked(!clicked)}>
 					{/*close and unclose*/}
