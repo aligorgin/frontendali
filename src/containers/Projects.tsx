@@ -71,7 +71,7 @@ export default function Projects() {
 				<ScrollContainer
 					vertical={false}
 					horizontal={true}
-					className={'relative flex w-full space-x-3'}
+					className={'relative flex w-full space-x-3 pointer cursor-grab'}
 				>
 					{items.map((item, index) => {
 						return (
