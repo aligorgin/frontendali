@@ -104,7 +104,7 @@ export default function Header() {
 				<a
 					target={'_blank'}
 					rel={'noreferrer'}
-					href="https://resume1.storage.iran.liara.space/AliGorgin.pdf"
+					href="https://resume2.storage.iran.liara.space/AliGorgin.pdf"
 					className="flex h-[48px] w-[270px] items-center justify-center rounded-md border border-red-400 shadow-md shadow-black/20 transition-all duration-200 active:scale-95 active:shadow-sm dark:border-blue-400 dark:shadow-white/10 sm:h-[40px] sm:w-[170px] sm:hover:-translate-y-[2px] sm:active:translate-y-0 "
 				>
 					<span className="flex items-center justify-center space-x-1">
