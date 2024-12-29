@@ -14,7 +14,7 @@ export default function Projects() {
 			desc: 'Rick and Morty API: Explore animated characters\' details.',
 			iconSrc: 'https://github.com/aligorgin/rick-morty',
 			imageSrc: '/rick-morty.png',
-			websiteSrc: 'https://rickandmorty.iran.liara.run/',
+			websiteSrc: 'https://rick-morty-aliwolfi.vercel.app/',
 			name: 'Rick And Morty'
 		},
 		{
